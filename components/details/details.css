@@ -50,13 +50,14 @@
 }
 
 .commentBoxes {
-  width: 761px;
+  width: 825px;
   margin-inline: auto;
   background-color: #ffffff;
   padding-inline: 32px;
   padding-top: 24px;
   display: flex;
   flex-direction: column;
+  border-radius: 10px;
 }
 .commentsCount {
   font-size: 18px;
@@ -71,14 +72,13 @@
 .commentInfo {
   display: flex;
   gap: 32px;
-  align-items: center;
+  margin-bottom: 32px;
 }
 
 .commentContent {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  align-items: center;
 }
 
 .userInfo {
@@ -118,6 +118,19 @@
   background: none;
   border: none;
 }
+
+.userComment {
+  color: #647196;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 21.68px;
+  text-align: left;
+}
+
+.divider {
+  border: 1px solid #8c92b3;
+  opacity: 0.25;
+}
 .addComment {
   display: flex;
   flex-direction: column;
@@ -125,6 +138,8 @@
   background-color: #ffffff;
   padding: 34px;
   border-radius: 10px;
+  margin-bottom: 130px;
+  width: 825px;
 
   h3 {
     color: #3a4374;

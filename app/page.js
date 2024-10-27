@@ -8,5 +8,16 @@ import Cards from "@/components/cards/cards";
 import Sidebar from "@/components/sidebar/Sidebar";
 
 export default function Home() {
-  return <></>;
+  return (
+    <>
+      <div className="container">
+        <Sidebar />
+        <div className="rightContainer">
+          <Header />
+          <Cards />
+        </div>
+        <CreateFeedback />
+      </div>
+    </>
+  );
 }

@@ -13,6 +13,8 @@ body {
   line-height: 1.5;
   /* 4. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  background-color: #f7f8fd;
+  font-family: "Jost", sans-serif;
 }
 /* 5. Improve media defaults */
 img,
@@ -30,6 +32,7 @@ textarea,
 select {
   font: inherit;
   background-color: #f7f8fd;
+  cursor: pointer;
 }
 /* 7. Avoid text overflows */
 p,
@@ -56,4 +59,19 @@ a {
 #root,
 #__next {
   isolation: isolate;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  margin-top: 94px;
+  margin-bottom: 130px;
+  margin-inline: auto;
+  max-width: 1110px;
+}
+
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
