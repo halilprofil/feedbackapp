@@ -6,6 +6,8 @@ import CreateFeedback from "@/components/create/create";
 import EditFeedback from "@/components/edit/edit";
 import Cards from "@/components/cards/cards";
 import Sidebar from "@/components/sidebar/Sidebar";
+import RoadMapHeader from "@/components/roadmap/header";
+import RoadMapsCards from "@/components/roadmap/roadmapcards";
 
 export default function Home() {
   return (
