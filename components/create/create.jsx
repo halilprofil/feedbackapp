@@ -2,11 +2,19 @@
 
 import Image from "next/image";
 import "./create.css";
+import { useEffect } from "react";
+import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
-export default function CreateFeedback() {
+export default function CreateFeedback({show, setShow}) {
+    useEffect(()=>{
+       
+
+    },[show])
   return (
+   
     <>
-      <dialog open={true}>
+      <dialog open={show}>
         <form>
           <h3>Create New Feedback</h3>
           <div>
@@ -30,7 +38,7 @@ export default function CreateFeedback() {
           </div>
 
           <div className="buttons">
-            <button className="cancel">Cancel</button>
+            <button className="cancel" onClick={()=> setShow(false)}>Cancel</button>
             <button className="KaydetBtn">Add Feedback</button>
           </div>
 

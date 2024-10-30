@@ -8,8 +8,13 @@ import Cards from "@/components/cards/cards";
 import Sidebar from "@/components/sidebar/Sidebar";
 import RoadMapHeader from "@/components/roadmap/header";
 import RoadMapsCards from "@/components/roadmap/roadmapcards";
+import { getFeedback } from "@/utils/fetch";
+import Login from "@/components/login/login";
 
-export default function Home() {
+export default async function Home() {
+  const {response} =  await getFeedback();
+  
+  console.log(response);
   return (
     <>
       <div className="container">

@@ -2,26 +2,21 @@
 
 import { useState, dialogRef } from "react";
 import CreateFeedback from "../create/create";
+import { useRouter } from 'next/router';
 
 export default function AddFeedBackBtn() {
   const [show, setShow] = useState(false);
 
   function openModal() {
     setShow(true);
-    const dialog = dialogRef.current;
-  }
-
-  function closeModal() {
-    setShow(false);
-    const dialog = dialogRef.current;
   }
 
   return (
     <>
-      <button onClick={() => setShow(true)} className="add-feedback-btn">
+      <button onClick={openModal} className="add-feedback-btn">
         + Add Feedback
       </button>
-      <CreateFeedback />
+      <CreateFeedback show={show} setShow={setShow}/>
     </>
   );
 }
