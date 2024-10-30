@@ -56,6 +56,15 @@ form {
   }
 }
 
+.createTitle {
+  color: #3a4374;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 34.68px;
+  letter-spacing: -0.3333333432674408px;
+  text-align: left;
+}
+
 p {
   font-size: 14px;
   font-weight: 700;

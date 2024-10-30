@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, dialogRef } from "react";
+import { useState } from "react";
 import CreateFeedback from "../create/create";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
 export default function AddFeedBackBtn() {
   const [show, setShow] = useState(false);
@@ -16,7 +16,7 @@ export default function AddFeedBackBtn() {
       <button onClick={openModal} className="add-feedback-btn">
         + Add Feedback
       </button>
-      <CreateFeedback show={show} setShow={setShow}/>
+      <CreateFeedback show={show} setShow={setShow} />
     </>
   );
 }

@@ -7,13 +7,9 @@ import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { CreateFeedbacks } from "@/app/api/action";
 
-export default function CreateFeedback({show, setShow}) {
-    useEffect(()=>{
-       
-
-    },[show])
+export default function CreateFeedback({ show, setShow }) {
+  useEffect(() => {}, [show]);
   return (
-   
     <>
       <dialog open={show}>
         <form action={CreateFeedbacks}>
@@ -43,7 +39,9 @@ export default function CreateFeedback({show, setShow}) {
           </div>
 
           <div className="buttons">
-            <button className="cancel" onClick={()=> setShow(false)}>Cancel</button>
+            <button className="cancel" onClick={() => setShow(false)}>
+              Cancel
+            </button>
             <button className="KaydetBtn">Add Feedback</button>
           </div>
 
