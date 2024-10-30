@@ -11,8 +11,13 @@
   cursor: pointer;
 }
 
+.contentBox {
+  display: flex;
+}
+
 .likesnContentBox {
   display: flex;
+  flex-direction: column;
   gap: 40px;
 }
 
