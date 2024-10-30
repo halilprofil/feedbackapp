@@ -1,20 +1,22 @@
 "use client"
 import { loginUser } from "@/utils/fetch";
 import "./login.css"
+import { Loginuser } from "@/app/api/action";
 export default function Login(){
 
-   async function handleLogin(e){
-        e.preventDefault();
-        const formData = new FormData(e.target);
-        const formObj = Object.fromEntries(formData);
-        const response = await loginUser(formObj);
-        console.log(response); 
-    }
+//    async function handleLogin(e){
+//         e.preventDefault();
+//         const formData = new FormData(e.target);
+//         const formObj = Object.fromEntries(formData);
+//         const response = await loginUser(formObj);
+//         console.log(response);
+        
+//     }
     return(
         <> 
-        <dialog className="modal" open={true}>
+        <dialog className="modal" open={false}>
             <h2>Join Medium.</h2>
-            <form onSubmit={(e)=> handleLogin(e)} className="login-form">
+            <form action={Loginuser}  className="login-form">
                 <label htmlFor="userName">User Name</label>
                 <input id="userName" name="userName" type="text"  />
                 <label htmlFor="email">Email</label>

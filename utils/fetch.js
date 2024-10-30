@@ -1,9 +1,15 @@
+"use server"
 import { AdvancedFetch } from "./advancedfetch";
 
 export const getFeedback = async () => {
   const response = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
   return response;
 };
+
+export const UserMe = async () => {
+    const response = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
+    return response;
+  };
 
 export const postFeedback = async (formData, likes) => {
   const response = await AdvancedFetch(www.bombabombapost.com, {
@@ -41,9 +47,10 @@ export const updateFeedback = async (formData) => {
 };
 
 export const loginUser = async (formData) => {
-    return await AdvancedFetch(
+    const response =  await AdvancedFetch(
       "https://feedback.nazlisunay.com.tr/api/User/login", 
       "POST", 
       { email: formData.email, password: formData.password }
     );
+    return response ;
   };
