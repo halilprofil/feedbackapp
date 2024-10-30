@@ -2,6 +2,7 @@
 
 import { AdvancedFetch } from "@/utils/advancedfetch";
 import { UserMe } from "@/utils/fetch";
+import { revalidatePath } from "next/navigation";
 
 
 
@@ -16,14 +17,26 @@ export async function Loginuser(formData) {
     { email: email, password: password }
   );
   return response;
-  
+
 }
 
 export async function CreateFeedbacks(formData) {
-  const title  =   formData.get("title");
-  const category = formData.get("category");
-  const description = formData.get("detail");
-    console.log(formData.get("detail"));
-}
+    const title = formData.get("title");
+    const category = formData.get("category");
+    const description = formData.get("detail");
+    const userId = formData.get("userId");
+    const status = formData.get("status");
+    console.log(formData.get("status"));
+  
+    const response = await AdvancedFetch(
+      "https://feedback.nazlisunay.com.tr/api/Opinions",
+      "POST",
+      { title, category, description, userId, status }
+    );
+  
+    if (response.status === 200) {
+      revalidatePath("/"); // Geri dönmek istediğiniz yolu belirtin
+    }
+  }
 
 

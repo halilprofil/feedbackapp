@@ -9,7 +9,7 @@
   border-radius: 10px;
 }
 
-.right-contents {
+.hc-right-content {
   display: flex;
   align-items: center;
   gap: 38px;
@@ -19,14 +19,13 @@
     gap: 10px;
   }
 
-  p{
+  p {
     color: white;
     font-size: 18px;
     font-weight: 700;
     line-height: 26.01px;
     letter-spacing: -0.25px;
     text-align: left;
-
   }
 }
 
@@ -38,9 +37,30 @@
     background-color: transparent;
     border: transparent;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 3px;
   }
   p {
     color: #f2f4fe;
+  }
+}
+
+.filtersortby {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 255px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 40px -7px #373f6859;
+  li {
+    border-bottom: 1px solid #3a4374;
+    color: #647196;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23.12px;
+    text-align: left;
+    list-style: none;
   }
 }
 
