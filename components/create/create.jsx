@@ -5,6 +5,7 @@ import "./create.css";
 import { useEffect } from "react";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
+import { CreateFeedbacks } from "@/app/api/action";
 
 export default function CreateFeedback({show, setShow}) {
     useEffect(()=>{
@@ -15,7 +16,7 @@ export default function CreateFeedback({show, setShow}) {
    
     <>
       <dialog open={show}>
-        <form>
+        <form action={CreateFeedbacks}>
           <h3>Create New Feedback</h3>
           <div>
             <p>Feedback Title</p>
@@ -27,7 +28,11 @@ export default function CreateFeedback({show, setShow}) {
             <p>Category</p>
             <label htmlFor="category">Choose a category for your feedback</label>
             <select name="category" id="category">
-              <option value=""></option>
+              <option value="UI">UI</option>
+              <option value="UX">UX</option>
+              <option value="Enhancement">Enhancement</option>
+              <option value="Bug">Bug</option>
+              <option value="Feature">Feature</option>
             </select>
           </div>
 
