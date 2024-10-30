@@ -1,23 +1,28 @@
 import Image from "next/image";
 import "./Cards.css";
 import Likes from "./likes";
+import { getFeedback } from "@/utils/fetch";
 
-export default function Cards() {
+export default async function Cards() {
+  const { response } = await getFeedback();
+  const data = response;
   return (
     <>
       <div className="cardsContainer">
-        <div className="likesnContentBox">
-          <Likes />
-          <div className="content">
-            <p className="title">Add tags for solutions</p>
-            <p className="text">Easier to search for solutions based on a specific stack.saasdasd</p>
-            <p className="categories">Enhancement</p>
+        {data.map(x => (
+          <div key={x.id} className="likesnContentBox">
+            <Likes voteCount={x.voteCount} />
+            <div className="content">
+              <p className="title">{x.title}</p>
+              <p className="text">{x.description}</p>
+              <p className="categories">{x.status}</p>
+            </div>
+            <div className="commentBox">
+              <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
+              <p className="commentCount">{x.comments}</p>
+            </div>
           </div>
-        </div>
-        <div className="commentBox">
-          <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
-          <p className="commentCount">2</p>
-        </div>
+        ))}
       </div>
     </>
   );
