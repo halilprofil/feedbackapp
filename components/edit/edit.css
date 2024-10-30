@@ -1,0 +1,147 @@
+dialog{
+    top: 50px;
+    margin-inline: auto;
+    border-radius: 10px;
+    border: transparent;
+}
+form{
+    padding-left:42px ;
+    padding-right: 42px;
+    padding-bottom: 40px;
+    padding-top: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    input{
+        /* width: 90%; */
+        height: 48px;
+        border-radius: 5px;
+        border: transparent;
+        background-color: #F7F8FD;
+        color: #3A4374;
+        padding-left: 15px;
+    }
+    select{
+        /* width: 90%; */
+        height: 48px;
+        border-radius: 5px;
+        border: transparent;
+        background-color: #F7F8FD;
+        color: #3A4374;
+        padding-left: 15px;
+    }
+    textarea{
+        /* width: 90%; */
+        height: 96px;
+        border-radius: 5px;
+        border: transparent;
+        background-color: #F7F8FD;
+        color: #3A4374 !important;
+        padding: 24px;
+    }
+    textarea::placeholder{
+        color: #3A4374;
+    }
+    label{
+        margin-bottom: 16px;
+    }
+
+
+    div{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        p{
+            margin-bottom: 4px;
+        }
+        
+    }
+}
+
+p{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20.23px;
+    letter-spacing: -0.1944444477558136px;
+    text-align: left;
+    color: #3A4374;
+}
+
+label{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.23px;
+    text-align: left;
+    color: #647196;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+    
+}
+
+.cancel{
+        background-color: #3a4374;
+        border: transparent;
+        border-radius: 10px;
+        padding: 12px 25px;
+        display: flex;
+        align-items: center;
+        color: #f2f4fe;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20.23px;
+        text-align: left;
+        cursor: pointer;
+
+}
+
+.delete{
+        background-color: #d73737;
+        border: transparent;
+        border-radius: 10px;
+        padding: 12px 25px;
+        display: flex;
+        align-items: center;
+        color: #f2f4fe;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 20.23px;
+        text-align: left;
+        cursor: pointer;
+        margin-right: 61px;
+}
+
+.img1{
+    position: absolute;
+    top: -28px;
+    left: 31px;
+}
+
+.img2{
+    position: absolute;
+    top: -8px;
+    left:52px;
+}
+
+
+.img3{
+    position: absolute;
+    top: -11px;
+    left:49px;
+}
+
+h3{ 
+    color: #3A4374;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 34.68px;
+    letter-spacing: -0.3333333432674408px;
+    text-align: left;
+}
+
+
+

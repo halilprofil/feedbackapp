@@ -1,0 +1,41 @@
+.empty-container {
+    max-width: 825px;
+    margin-inline: auto;
+    margin-top: 24px;
+    padding-top: 110px;
+    padding-bottom: 110px;
+    border-radius: 10px;
+}
+
+.empty-context {
+
+    width: 410px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 53px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+        p{
+        color: #647196;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 23.12px;
+        text-align: center;
+        }
+        h3{
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 34.68px;
+        letter-spacing: -0.3333333432674408px;
+        text-align: center;
+        color: #3A4374;
+        }
+    }
+}
