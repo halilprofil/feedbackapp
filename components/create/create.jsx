@@ -6,17 +6,9 @@ import { useEffect } from "react";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 
-<<<<<<< HEAD
 export default function CreateFeedback({ show, setShow }) {
-=======
-export default function CreateFeedback({show, setShow}) {
-    useEffect(()=>{
-       
-
-    },[show])
->>>>>>> origin/halil
+  useEffect(() => {}, [show]);
   return (
-   
     <>
       <dialog open={show}>
         <form>
@@ -42,13 +34,9 @@ export default function CreateFeedback({show, setShow}) {
           </div>
 
           <div className="buttons">
-<<<<<<< HEAD
             <button className="cancel" onClick={() => setShow(false)}>
               Cancel
             </button>
-=======
-            <button className="cancel" onClick={()=> setShow(false)}>Cancel</button>
->>>>>>> origin/halil
             <button className="KaydetBtn">Add Feedback</button>
           </div>
 

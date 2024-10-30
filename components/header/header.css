@@ -9,11 +9,7 @@
   border-radius: 10px;
 }
 
-<<<<<<< HEAD
 .hc-right-content {
-=======
-.right-contents {
->>>>>>> origin/halil
   display: flex;
   align-items: center;
   gap: 38px;
@@ -23,14 +19,13 @@
     gap: 10px;
   }
 
-  p{
+  p {
     color: white;
     font-size: 18px;
     font-weight: 700;
     line-height: 26.01px;
     letter-spacing: -0.25px;
     text-align: left;
-
   }
 }
 
