@@ -5,6 +5,9 @@ export async function AdvancedFetch(url, method = "GET", data = null) {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          "Cache-Control": "no-store", // Önceki yanıtları önbelleğe almadan her zaman yeni yanıt al
+          "Pragma": "no-cache",         // Eski HTTP/1.0 tarayıcıları için
+          "Expires": "0",               // Yanıtın hemen geçersiz olması için
         },
         body: data ? JSON.stringify(data) : null,
       });
@@ -21,3 +24,4 @@ export async function AdvancedFetch(url, method = "GET", data = null) {
       return { response: null, status: 500, error: error.message };
     }
   }
+  
