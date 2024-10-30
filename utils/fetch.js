@@ -1,7 +1,7 @@
 import { AdvancedFetch } from "./advancedfetch";
 
 export const getFeedback = async () => {
-  const response = await AdvancedFetch("https://dummyjson.com/todos");
+  const response = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
   return response;
 };
 
@@ -39,3 +39,11 @@ export const updateFeedback = async (formData) => {
   });
   return response;
 };
+
+export const loginUser = async (formData) => {
+    return await AdvancedFetch(
+      "https://feedback.nazlisunay.com.tr/api/User/login", 
+      "POST", 
+      { email: formData.email, password: formData.password }
+    );
+  };
