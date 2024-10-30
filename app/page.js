@@ -15,11 +15,6 @@ import { AdvancedFetch } from "@/utils/advancedfetch";
 export default async function Home() {
   const response = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
   console.log(response);
-
-  
-
-
- 
   
   return (
     <>
