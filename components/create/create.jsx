@@ -3,12 +3,12 @@
 import Image from "next/image";
 import "./create.css";
 
-export default function CreateFeedback() {
+export default function CreateFeedback({ show, setShow }) {
   return (
     <>
-      <dialog open={true}>
+      <dialog open={show}>
         <form>
-          <h3>Create New Feedback</h3>
+          <h4 className="createTitle">Create New Feedback</h4>
           <div>
             <p>Feedback Title</p>
             <label htmlFor="title">Add a short, descriptive headline</label>
@@ -30,7 +30,9 @@ export default function CreateFeedback() {
           </div>
 
           <div className="buttons">
-            <button className="cancel">Cancel</button>
+            <button className="cancel" onClick={() => setShow(false)}>
+              Cancel
+            </button>
             <button className="KaydetBtn">Add Feedback</button>
           </div>
 

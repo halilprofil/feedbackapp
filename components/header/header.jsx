@@ -7,14 +7,13 @@ export default function Header() {
   return (
     <>
       <div className="header-container">
-        <div className="right-content">
+        <div className="hc-right-content">
           <div>
             <Image src="/assets/figure.svg" alt="Figure illustration" width={23} height={24} />
             <Image src="/assets/figure1.svg" alt="Figure illustration" width={117} height={26} />
           </div>
           <Filter />
         </div>
-
         <AddFeedBackBtn />
       </div>
     </>
