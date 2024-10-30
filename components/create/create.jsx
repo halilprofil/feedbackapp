@@ -31,6 +31,8 @@ export default function CreateFeedback({ show, setShow }) {
               <option value="Feature">Feature</option>
             </select>
           </div>
+           <input type="text" name="userId" hidden  value={"1a4e85ac-e862-4a68-a42d-56cb2ec8b8df"}/>
+           <input type="text" name="status" hidden  value={"Planned"}/>
 
           <div>
             <p>Feedback Detail</p>

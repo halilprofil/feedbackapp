@@ -7,7 +7,7 @@ export default async function Cards() {
   const { response } = await getFeedback();
   const data = response;
   console.log(data.map(x => x.title) + "11111111111111111");
-  console.log(data);git 
+  console.log(data)
 
   return (
     <>

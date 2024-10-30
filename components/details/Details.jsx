@@ -7,6 +7,7 @@ import Goback from "./Goback";
 import Comments from "./Comments";
 
 export default function Details() {
+  constR
   return (
     <>
       <div className="detailPage">
