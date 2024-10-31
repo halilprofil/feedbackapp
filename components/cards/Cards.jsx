@@ -5,7 +5,7 @@ import { getFeedback } from "@/utils/fetch";
 
 export default async function Cards() {
   const { response } = await getFeedback();
-  const data = response || []; // Eğer response null veya undefined ise boş bir dizi ile başla
+  const data = response || [];
 
   return (
     <div className="containerC">
