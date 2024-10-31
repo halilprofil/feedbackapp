@@ -2,7 +2,7 @@
 
 import { AdvancedFetch } from "@/utils/advancedfetch";
 import { UserMe } from "@/utils/fetch";
-import { revalidatePath } from "next/navigation";
+import { redirect, revalidatePath } from "next/navigation";
 
 
 
@@ -35,8 +35,17 @@ export async function CreateFeedbacks(formData) {
     );
   
     if (response.status === 200) {
-      revalidatePath("/"); // Geri dönmek istediğiniz yolu belirtin
+        ("/"); 
+      
     }
+  }
+
+
+  export async function DeleteFeedbacks(formData) {
+    const {response} = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/12`);  
+     console.log(response)
+
+    
   }
 
 

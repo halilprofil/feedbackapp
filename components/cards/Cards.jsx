@@ -2,15 +2,17 @@ import Image from "next/image";
 import "./Cards.css";
 import Likes from "./likes";
 import { getFeedback } from "@/utils/fetch";
+import Link from "next/link";
 
 export default async function Cards() {
   const { response } = await getFeedback();
-  const data = response || []; // Eğer response null veya undefined ise boş bir dizi ile başla
+  const data = response || [];
 
   return (
     <div className="containerC">
       {data.map((x) => (
-        <div key={x.id} className="cardsContainer">
+        <Link href={`detail/${x.id}`} >
+          <div key={x.id} className="cardsContainer">
           <div className="leftcontentCard">
             <Likes voteCount={x.voteCount} />
             <div className="content">
@@ -24,6 +26,8 @@ export default async function Cards() {
             <p className="commentCount">{x.comments}</p>
           </div>
         </div>
+        </Link>
+      
       ))}
     </div>
   );

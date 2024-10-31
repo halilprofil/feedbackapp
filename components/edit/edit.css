@@ -3,6 +3,7 @@ dialog {
   margin-inline: auto;
   border-radius: 10px;
   border: transparent;
+  z-index: 1000;
 }
 form {
   padding-left: 42px;
