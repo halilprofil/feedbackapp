@@ -1,15 +1,26 @@
+"use client"
 import Image from "next/image";
 import AddFeedBackBtn from "../header/button";
 import "./edit.css";
+import { AdvancedFetch } from "@/utils/advancedfetch";
 
 
 export default function EditFeedback(){
+
+    async function handleDelete(e){
+     e.preventDefault();
+     const {response , status} = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/12` , "DELETE");  
+     console.log(response);
+     console.log(status);
+        
+    }
+
     return(
         <>
-        <dialog open={false}>
+        <dialog open={true}>
             
             <form >
-            <h3>Editing ‘Add a dark theme option’</h3>
+             <h3>Editing ‘Add a dark theme option’</h3>
              <div>
                 <p>Feedback Title</p>
                 <label htmlFor="titleEdit">Add a short, descriptive headline</label>
@@ -39,9 +50,11 @@ export default function EditFeedback(){
              </div>
 
              <div className="buttons">
-                <button className="delete">Delete</button>
+              <button onClick={(e)=> handleDelete(e)} className="delete">Delete</button>
+                
                 <button className="cancel">Cancel</button>
-                <AddFeedBackBtn/>
+                <button className="cancel">Add Feedback</button>
+
              </div>
 
              <Image className="img1" src="/assets/circle.svg" width={56} height={56}></Image>
