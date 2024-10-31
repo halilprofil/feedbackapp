@@ -16,7 +16,7 @@ export default async function Cards() {
             <div className="content">
               <p className="title">{x.title}</p>
               <p className="text">{x.description}</p>
-              <p className="categories">{x.status}</p>
+              <p className="categories">{x.category}</p>
             </div>
           </div>
           <div className="commentBox">
