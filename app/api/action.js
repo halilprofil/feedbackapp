@@ -41,3 +41,11 @@ export async function CreateFeedbacks(formData) {
   }
 
 
+  export async function DeleteFeedbacks(formData) {
+    const {response} = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/12`);  
+     console.log(response)
+
+    
+  }
+
+
