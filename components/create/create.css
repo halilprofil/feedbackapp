@@ -4,7 +4,7 @@ dialog {
   border-radius: 10px;
   border: transparent;
 }
-form {
+.createForm {
   padding-left: 42px;
   padding-right: 42px;
   padding-bottom: 40px;

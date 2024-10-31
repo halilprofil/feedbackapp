@@ -11,7 +11,7 @@ export default function CreateFeedback({ show, setShow }) {
   return (
     <>
       <dialog open={show}>
-        <form>
+        <form className="createForm">
           <h4 className="createTitle">Create New Feedback</h4>
           <div>
             <p>Feedback Title</p>
