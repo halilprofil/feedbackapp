@@ -8,16 +8,12 @@ import Comments from "./Comments";
 import { AdvancedFetch } from "@/utils/advancedfetch";
 import Likes from "../cards/likes";
 
-<<<<<<< HEAD
-export default function Details() {
-=======
 export  default async function Details({id}) {
   
    const {response} = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${id}`);  
    const data = response;
 
   
->>>>>>> 3ba77fb1a4ad5edb0d0c516a47e64e5573725b9c
   return (
     <>
       <div className="detailPage">
