@@ -29,24 +29,37 @@
   }
 }
 
-.filter {
-  color: white !important;
+.filterForm {
   display: flex;
-  gap: 10px;
-  button {
-    background-color: transparent;
-    border: transparent;
-    cursor: pointer;
+  flex-direction: row;
+  gap: 2px;
+  align-items: baseline;
+  justify-content: center;
+  padding: 0px !important;
+  label {
     display: flex;
     align-items: center;
-    gap: 3px;
+    width: 70px;
   }
-  p {
+  select {
+    background-color: #373f68;
     color: #f2f4fe;
+    cursor: pointer;
+    width: 150px;
+    padding: 10px 15px;
+    outline: none;
   }
 }
 
-.filtersortby {
+.selectBox {
+  position: relative;
+  display: inline-block;
+}
+.select option {
+  padding: 16px;
+}
+
+/* .filtersortby {
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -62,7 +75,7 @@
     text-align: left;
     list-style: none;
   }
-}
+} */
 
 .add-feedback-btn {
   background-color: #ad1fea;
