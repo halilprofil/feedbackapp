@@ -14,6 +14,8 @@ export default function CreateFeedback({ show, setShow }) {
       <dialog open={show}>
         <form action={CreateFeedbacks}>
           <h3>Create New Feedback</h3>
+        <form className="createForm">
+          <h4 className="createTitle">Create New Feedback</h4>
           <div>
             <p>Feedback Title</p>
             <label htmlFor="title">Add a short, descriptive headline</label>
