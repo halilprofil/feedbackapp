@@ -189,3 +189,7 @@
   opacity: 0.8;
   cursor: pointer;
 }
+
+.warning{
+  color: red !important;
+}

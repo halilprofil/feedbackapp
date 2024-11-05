@@ -20,12 +20,11 @@ export default async function Home() {
   return (
     <>
       <div className="container">
-        <Sidebar data = {data} />
+        <Sidebar />
         <div className="rightContainer">
           <Header />
           <Cards />
         </div>
-        <CreateFeedback />
         <Login/>
       </div>
     </>

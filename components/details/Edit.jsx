@@ -2,13 +2,13 @@
 
 import EditFeedback from "../edit/edit";
 
-export default function Edit({id}) {
+export default function Edit({id, data}) {
   
   return(
 
     <>
     <button className="editBtn">Edit Feedback</button>
-    <EditFeedback id={id}/>
+    <EditFeedback id={id} data={data}/>
     </>
   ) ;
 

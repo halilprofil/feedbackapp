@@ -6,7 +6,8 @@ import { AdvancedFetch } from "@/utils/advancedfetch";
 import { useState } from "react";
 import { EditFeedbacks } from "@/app/api/action";
 
-export default function EditFeedback({ id }) {
+export default function EditFeedback({ id ,data}) {
+  
 
   
 
@@ -19,13 +20,13 @@ export default function EditFeedback({ id }) {
           <div>
             <p>Feedback Title</p>
             <label htmlFor="titleEdit">Add a short, descriptive headline</label>
-            <input type="text" name="title" id="titleEdit" />
+            <input type="text" name="title" id="titleEdit" defaultValue={data.title}/>
           </div>
 
           <div>
             <p>Category</p>
             <label htmlFor="categoryEdit">Choose a category for your feedback</label>
-            <select name="category" id="categoryEdit">
+            <select name="category" id="categoryEdit" defaultValue={data.category}>
               <option value="feature">Feature</option>
               <option value="UI">UI</option>
               <option value="UX">UX</option>
@@ -50,6 +51,7 @@ export default function EditFeedback({ id }) {
               name="detail"
               id="detailEdit"
               placeholder="It would help people with light sensitivities and who prefer dark mode."
+              defaultValue={data.detail}
             ></textarea>
           </div>
 
