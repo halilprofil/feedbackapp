@@ -11,26 +11,27 @@ import Likes from "../cards/likes";
 export default async function Details({ id }) {
   const { response } = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${id}`);
   const data = response;
+  
 
   return (
     <>
       <div className="detailPage">
         <div className="headerDetail">
           <Goback />
-          <Edit />
+          <Edit id={id} />
         </div>
-        <div key={data.id} className="cardsContainer">
+        <div key={data?.id} className="cardsContainer">
           <div className="leftcontentCard">
-            <Likes voteCount={data.voteCount} />
+            <Likes voteCount={data?.voteCount} />
             <div className="content">
-              <p className="title">{data.title}</p>
-              <p className="text">{data.description}</p>
-              <p className="categories">{data.category}</p>
+              <p className="title">{data?.title}</p>
+              <p className="text">{data?.description}</p>
+              <p className="categories">{data?.category}</p>
             </div>
           </div>
           <div className="commentBox">
             <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
-            <p className="commentCount">{data.comments}</p>
+            <p className="commentCount">{data?.comments}</p>
           </div>
         </div>
         <Comments />

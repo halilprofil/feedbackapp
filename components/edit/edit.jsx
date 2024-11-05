@@ -3,30 +3,18 @@ import Image from "next/image";
 import AddFeedBackBtn from "../header/button";
 import "./edit.css";
 import { AdvancedFetch } from "@/utils/advancedfetch";
+import { useState } from "react";
 import { EditFeedbacks } from "@/app/api/action";
 
 export default function EditFeedback({ id }) {
-  //   async function handleDelete(e) {
-  //     e.preventDefault();
-  //     const { response, status } = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/12`, "DELETE");
-  //     console.log(response);
-  //     console.log(status);
-  //   }
 
-  async function handleEdit(e) {
-    e.preventDefault();
-    const { response } = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${id}`, "PUT");
-    console.log(response + `5352632536253`);
-  }
+  
 
   return (
     <>
       <dialog open={true}>
-        <form
-          action={async (formData) => {
-            await EditFeedbacks(formData);
-          }}
-        >
+        <form action={EditFeedbacks}> {/* Form onSubmit ile handleEdit'e bağlı */}
+          <input type="number" hidden  name="postId" value={id} />
           <h3>Editing ‘Add a dark theme option’</h3>
           <div>
             <p>Feedback Title</p>
@@ -39,13 +27,18 @@ export default function EditFeedback({ id }) {
             <label htmlFor="categoryEdit">Choose a category for your feedback</label>
             <select name="category" id="categoryEdit">
               <option value="feature">Feature</option>
+              <option value="UI">UI</option>
+              <option value="UX">UX</option>
+              <option value="Enhancement">Enhancement</option>
+              <option value="Bug">Bug</option>
             </select>
           </div>
+          <input type="text" name="userId" hidden value="1a4e85ac-e862-4a68-a42d-56cb2ec8b8df" />
 
           <div>
             <p>Update Status</p>
-            <label htmlFor="categoryChange">Change feedback state</label>
-            <select name="category" id="categoryChange">
+            <label htmlFor="status">Change feedback state</label>
+            <select name="status" id="status">
               <option value="planned">Planned</option>
             </select>
           </div>
@@ -61,18 +54,20 @@ export default function EditFeedback({ id }) {
           </div>
 
           <div className="buttons">
-            <button onClick={(e) => handleDelete(e)} className="delete">
+            <button className="delete">
               Delete
             </button>
 
-            <button className="cancel">Cancel</button>
-            <button onClick={(e) => handleEdit(e)} className="cancel">
-              Add Feedback
+            <button type="button" onClick={() => setShow(false)} className="cancel">
+              Cancel
+            </button>
+            <button type="submit" className="submit">
+              Save Feedback
             </button>
           </div>
 
-          <Image className="img1" src="/assets/circle.svg" width={56} height={56}></Image>
-          <Image className="img2" src="/assets/imgedit.svg" width={20} height={20}></Image>
+          <Image className="img1" src="/assets/circle.svg" width={56} height={56} alt="Circle" />
+          <Image className="img2" src="/assets/imgedit.svg" width={20} height={20} alt="Edit Icon" />
         </form>
       </dialog>
     </>

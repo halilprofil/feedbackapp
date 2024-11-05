@@ -42,9 +42,10 @@ export async function EditFeedbacks(formData) {
   const description = formData.get("detail");
   const userId = formData.get("userId");
   const status = formData.get("status");
+  const postId = formData.get("postId");
   console.log(formData.get("status"));
 
-  const response = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions", "PUT", {
+  const {response} = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${postId}`, "PUT", {
     title,
     category,
     description,
@@ -52,9 +53,9 @@ export async function EditFeedbacks(formData) {
     status,
   });
 
-  if (response.status === 200) {
-    ("/");
-  }
+  console.log(response);
+
+ 
 }
 
 export async function DeleteFeedbacks(id) {

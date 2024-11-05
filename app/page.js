@@ -13,13 +13,14 @@ import Login from "@/components/login/login";
 import { AdvancedFetch } from "@/utils/advancedfetch";
 
 export default async function Home() {
-  const response = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
-  console.log(response);
+  const {response} = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
+  const data = await response;
+  console.log(data);
   
   return (
     <>
       <div className="container">
-        <Sidebar />
+        <Sidebar data = {data} />
         <div className="rightContainer">
           <Header />
           <Cards />

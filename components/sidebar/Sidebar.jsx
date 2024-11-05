@@ -2,7 +2,7 @@ import "./Sidebar.css";
 import Filter from "./filter";
 import Roadmap from "./Roadmap";
 
-export default function Sidebar() {
+export default function Sidebar({data}) {
   return (
     <>
       <div className="Sidebar">
@@ -10,7 +10,7 @@ export default function Sidebar() {
           <h3>Frontend Mentor</h3>
           <p>Feedback Board</p>
         </div>
-        <Filter />
+        <Filter data = {data} />
         <Roadmap />
       </div>
     </>
