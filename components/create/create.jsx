@@ -19,7 +19,6 @@ export default function CreateFeedback({ show, setShow }) {
           action={async (formData) => {
             await CreateFeedbacks(formData);
             formRef.current.reset(); // Form gönderildikten sonra temizleniyor
-            
           }}
           ref={formRef} // form referansını burada kullanıyoruz
         >
@@ -69,4 +68,3 @@ export default function CreateFeedback({ show, setShow }) {
     </>
   );
 }
-
