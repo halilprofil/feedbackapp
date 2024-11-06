@@ -165,7 +165,7 @@ export async function logoutUser(prevState, formData) {
       cookies().set(".AspNetCore.Identity.Application", cookiesObject[".AspNetCore.Identity.Application"]);
 
       return { success: "Çıkış başarılı!" };
-
+      
   } catch (error) {
       console.error(error);
       return { error: "Bir hata oluştu" };
