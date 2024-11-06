@@ -226,9 +226,15 @@ export async function signupUser(prevState, formData) {
       const data = await response.text();
 
       if (!response.ok) {
-          console.log(data);
+          
+          console.log(response  );
+          if(response.status === 400){
+            return {
+              error: "şifreniz büyük küçük harf numara ve noktalama işareti içermelidir."
+            }
+          }
           return {
-              error: "Kayıt işlemi başarısız oldu."
+              error: "Kayıt işlemi sırasında bir hata  oluştu."
           };
       }
 
