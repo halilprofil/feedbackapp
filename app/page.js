@@ -16,6 +16,9 @@ export default async function Home() {
   const {response} = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
   const data = await response;
   console.log(data);
+
+
+  
   
   return (
     <>
@@ -25,7 +28,6 @@ export default async function Home() {
           <Header />
           <Cards />
         </div>
-        <Login/>
       </div>
     </>
   );

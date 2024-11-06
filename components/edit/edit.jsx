@@ -6,14 +6,14 @@ import { AdvancedFetch } from "@/utils/advancedfetch";
 import { useState } from "react";
 import { EditFeedbacks } from "@/app/api/action";
 
-export default function EditFeedback({ id ,data}) {
+export default function EditFeedback({ id ,data , show , setShow}) {
   
 
   
 
   return (
     <>
-      <dialog open={true}>
+      <dialog open={show}>
         <form action={EditFeedbacks}> {/* Form onSubmit ile handleEdit'e bağlı */}
           <input type="number" hidden  name="postId" value={id} />
           <h3>Editing ‘Add a dark theme option’</h3>
@@ -63,7 +63,7 @@ export default function EditFeedback({ id ,data}) {
             <button type="button" onClick={() => setShow(false)} className="cancel">
               Cancel
             </button>
-            <button type="submit" className="submit">
+            <button type="submit" className="cancel">
               Save Feedback
             </button>
           </div>
