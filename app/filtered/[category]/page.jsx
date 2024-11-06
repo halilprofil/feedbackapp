@@ -17,10 +17,10 @@ export default async function Filtered({params}) {
   const { response } = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
   const data = await response;
   console.log(data);
-  const filteredData = data.filter(x=> x.category === category);
+  const filteredData = data?.filter(x=> x.category === category);
   return (
     <>
-      {filteredData.map(x=> (<Link href={`/detail/${x.id}`} >
+      {filteredData?.map(x=> (<Link href={`/detail/${x.id}`} >
           <div key={x.id} className="cardsContainer">
           <div className="leftcontentCard">
             <Likes voteCount={x.voteCount} />

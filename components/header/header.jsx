@@ -7,7 +7,7 @@ import { getFeedback } from "@/utils/fetch";
 export default async function Header() {
   const { response } = await getFeedback();
   const data = response;
-  console.log(data.length);
+  
 
   return (
     <>

@@ -6,26 +6,27 @@ import { AdvancedFetch } from "@/utils/advancedfetch";
 import { useState } from "react";
 import { EditFeedbacks } from "@/app/api/action";
 
-export default function EditFeedback({ id }) {
+export default function EditFeedback({ id ,data , show , setShow}) {
+  
 
   
 
   return (
     <>
-      <dialog open={true}>
+      <dialog open={show}>
         <form action={EditFeedbacks}> {/* Form onSubmit ile handleEdit'e bağlı */}
           <input type="number" hidden  name="postId" value={id} />
           <h3>Editing ‘Add a dark theme option’</h3>
           <div>
             <p>Feedback Title</p>
             <label htmlFor="titleEdit">Add a short, descriptive headline</label>
-            <input type="text" name="title" id="titleEdit" />
+            <input type="text" name="title" id="titleEdit" defaultValue={data.title}/>
           </div>
 
           <div>
             <p>Category</p>
             <label htmlFor="categoryEdit">Choose a category for your feedback</label>
-            <select name="category" id="categoryEdit">
+            <select name="category" id="categoryEdit" defaultValue={data.category}>
               <option value="feature">Feature</option>
               <option value="UI">UI</option>
               <option value="UX">UX</option>
@@ -50,6 +51,7 @@ export default function EditFeedback({ id }) {
               name="detail"
               id="detailEdit"
               placeholder="It would help people with light sensitivities and who prefer dark mode."
+              defaultValue={data.detail}
             ></textarea>
           </div>
 
@@ -61,7 +63,7 @@ export default function EditFeedback({ id }) {
             <button type="button" onClick={() => setShow(false)} className="cancel">
               Cancel
             </button>
-            <button type="submit" className="submit">
+            <button type="submit" className="cancel">
               Save Feedback
             </button>
           </div>

@@ -18,7 +18,7 @@ export default async function Details({ id }) {
       <div className="detailPage">
         <div className="headerDetail">
           <Goback />
-          <Edit id={id} />
+          <Edit id={id} data={data}/>
         </div>
         <div key={data?.id} className="cardsContainer">
           <div className="leftcontentCard">

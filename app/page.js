@@ -16,17 +16,18 @@ export default async function Home() {
   const {response} = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
   const data = await response;
   console.log(data);
+
+
+  
   
   return (
     <>
       <div className="container">
-        <Sidebar data = {data} />
+        <Sidebar />
         <div className="rightContainer">
           <Header />
           <Cards />
         </div>
-        <CreateFeedback />
-        <Login/>
       </div>
     </>
   );

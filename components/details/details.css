@@ -37,12 +37,16 @@
   align-items: center;
   border: none;
   background: none;
+  p{
+    color: #8c92b3 !important;
+  }
 
   h6 {
     font-size: 14px;
     font-weight: 700;
     line-height: 20.23px;
     text-align: left;
+    color: #8c92b3 !important;
   }
 }
 
@@ -188,4 +192,8 @@
 .postCommentBtn:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+
+.warning{
+  color: red !important;
 }

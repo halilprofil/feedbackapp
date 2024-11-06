@@ -27,14 +27,14 @@ export default function CreateFeedback({ show, setShow }) {
             <h4 className="createTitle">Create New Feedback</h4>
             <div>
               <p>Feedback Title</p>
-              <label htmlFor="title">Add a short, descriptive headline</label>
-              <input type="text" name="title" id="title" />
+              <label htmlFor="createTitle1">Add a short, descriptive headline</label>
+              <input type="text" name="title" id="createTitle1" />
             </div>
 
             <div>
               <p>Category</p>
-              <label htmlFor="category">Choose a category for your feedback</label>
-              <select name="category" id="category">
+              <label htmlFor="createCategory1">Choose a category for your feedback</label>
+              <select name="category" id="createCategory1">
                 <option value="UI">UI</option>
                 <option value="UX">UX</option>
                 <option value="Enhancement">Enhancement</option>
@@ -47,8 +47,8 @@ export default function CreateFeedback({ show, setShow }) {
 
             <div>
               <p>Feedback Detail</p>
-              <label htmlFor="detail">Include any specific comments on what should be improved, added, etc.</label>
-              <textarea name="detail" id="detail"></textarea>
+              <label htmlFor="createDetail1">Include any specific comments on what should be improved, added, etc.</label>
+              <textarea name="detail" id="createDetail1"></textarea>
             </div>
 
             <div className="buttons">
