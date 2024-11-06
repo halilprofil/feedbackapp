@@ -80,7 +80,8 @@
   background-color: #f2f4ff;
   border-radius: 10px;
   margin-top: 8px;
-  max-width: 118px;
+  max-width: 90px !important;
+  text-align: center;
 }
 
 .commentBox {
