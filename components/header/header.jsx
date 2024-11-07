@@ -3,10 +3,18 @@ import AddFeedBackBtn from "./button";
 import Filter from "./filter";
 import "./header.css";
 import { getFeedback } from "@/utils/fetch";
+import { AdvancedFetch } from "@/utils/advancedfetch";
 
 export default async function Header() {
   const { response } = await getFeedback();
   const data = response;
+  const user = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
+  console.log(user.status);
+  let userId;
+  if(user.status !== 404){
+    userId = user.response.id
+
+  }
   
 
   return (
@@ -19,7 +27,7 @@ export default async function Header() {
           </div>
           <Filter />
         </div>
-        <AddFeedBackBtn />
+        <AddFeedBackBtn userId = {userId}/>
       </div>
     </>
   );

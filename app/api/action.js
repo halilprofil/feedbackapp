@@ -16,26 +16,47 @@ import { redirect, revalidatePath } from "next/navigation";
 //   return response;
 // }
 
-export async function CreateFeedbacks(formData) {
+export async function CreateFeedbacks(prevState, formData) {
   const title = formData.get("title");
   const category = formData.get("category");
-  const description = formData.get("detail");
+  const detail = formData.get("detail");
   const userId = formData.get("userId");
   const status = formData.get("status");
-  console.log(formData.get("status"));
 
-  const response = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions", "POST", {
-    title,
-    category,
-    description,
-    userId,
-    status,
+  if (!title) {
+    return { title: "bu alan zorunludur" };
+}
+
+if (!category) {
+  return { category: "bu alan zorunludur" };
+}
+
+if (!detail) {
+  return { detail: "bu alan zorunludur" };
+}
+
+  // API'ye istek gönder
+  const response = await fetch("https://feedback.nazlisunay.com.tr/api/Opinions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      title,
+      category,
+      description: detail,
+      userId,
+      status,
+    }),
+    credentials: "include"
   });
 
-  if (response.status === 200) {
-    ("/");
+  if (response.ok) {
+    return { success: "Feedback başarıyla oluşturldu." };
   }
+
+  return { error: "Failed to create feedback. Please try again." };
 }
+
+
 
 export async function EditFeedbacks(formData) {
   const title = formData.get("title");

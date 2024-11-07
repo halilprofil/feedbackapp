@@ -4,7 +4,7 @@ import { useState } from "react";
 import CreateFeedback from "../create/create";
 import { useRouter } from "next/router";
 
-export default function AddFeedBackBtn() {
+export default function AddFeedBackBtn({userId}) {
   const [show, setShow] = useState(false);
 
   function openModal() {
@@ -16,7 +16,7 @@ export default function AddFeedBackBtn() {
       <button onClick={openModal} className="add-feedback-btn">
         + Add Feedback
       </button>
-      <CreateFeedback show={show} setShow={setShow} />
+      <CreateFeedback show={show} setShow={setShow} userId = {userId}/>
     </>
   );
 }
