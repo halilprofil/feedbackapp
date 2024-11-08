@@ -80,6 +80,26 @@ export async function EditFeedbacks(formData) {
  
 }
 
+export async function Addcomments(formData) {
+  const comment = formData.get("comment");
+  const userId = formData.get("userId");
+  const postId = formData.get("postId");
+  console.log(postId)
+  console.log(userId);
+
+
+
+  const {response} = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Comment`, "POST", {
+    content: comment,
+    userId,
+    opinionId : Number(postId),
+  });
+
+  console.log(response);
+
+ 
+}
+
 export async function DeleteFeedbacks(id) {
   const { response } = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/12`);
   console.log(response);

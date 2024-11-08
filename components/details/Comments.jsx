@@ -2,27 +2,53 @@
 
 import Image from "next/image";
 
-export default function Comments() {
+export default function Comments({ realAllUserData, data }) {
+  console.log("User data:", realAllUserData); // Tüm kullanıcılar
+  console.log("Comments:", data.comments); // Yorumlar
+  console.log("User data type:", Array.isArray(realAllUserData) ? "Array" : typeof realAllUserData);
+  console.log("User data content:", realAllUserData.response);
+  const usersData = realAllUserData.response ;
+
+
   return (
     <div className="commentBoxes">
-      <p className="commentsCount">4 Comments</p>
-      <div className="commentInfo">
-        <Image width={40} height={40} src="/assets/profileimg.svg" alt="commentIcon" />
-        <div className="commentContent">
-          <div className="userInfo">
-            <div className="userInfoColumn">
-              <p className="name">Elijah Moss</p>
-              <p className="username">@hexagon.bestagon</p>
+      <p className="commentsCount">{data.comments.length} Comments</p>
+
+      {data.comments.map((comment) => {
+        // Yorumdaki kullanıcıyı `userId` ile bul
+        const user = usersData.find((u) => u.id === comment.userId) || {
+          firstName: "Anonymous",
+          lastName: "",
+          avatar: "/assets/profileimg.svg",
+          nickname: "unknown",
+        };
+
+        return (
+          <div key={comment.id} className="commentInfo">
+              {/* <Image 
+                width={40} 
+                height={40} 
+                src={user.avatar} 
+                alt="User Avatar" 
+              /> */}
+            <div className="commentContent">
+              <div className="userInfo">
+                <div className="userInfoColumn">
+                  <p className="name">
+                    {`${user.firstName} ${user.lastName}`.trim()}
+                  </p>
+                  <p className="username">@{user.nickname}</p>
+                </div>
+                <button className="replyBtn">Reply</button>
+              </div>
+              <div className="userComment">
+                {comment.content || "No comment available."}
+              </div>
             </div>
-            <button className="replyBtn">Reply</button>
+            <div className="divider"></div>
           </div>
-          <div className="userComment">
-            Also, please allow styles to be applied based on system preferences. I would love to be able to browse Frontend Mentor
-            in the evening after my device’s dark mode turns on without the bright background it currently has.
-          </div>
-        </div>
-      </div>
-      <div className="divider"></div>
+        );
+      })}
     </div>
   );
 }

@@ -15,11 +15,10 @@ import { AdvancedFetch } from "@/utils/advancedfetch";
 export default async function Home() {
   const {response} = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
   const data = await response;
-  console.log(data);
-
+  console.log(data.map(x=> x.status));
 
   
-  
+
   return (
     <>
       <div className="container">

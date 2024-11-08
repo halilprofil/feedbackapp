@@ -11,14 +11,25 @@ import Likes from "../cards/likes";
 export default async function Details({ id }) {
   const { response } = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${id}`);
   const data = response;
-  
+  const user = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
+  let userId;
+  let realUserData;
+  if(user.status !== 404){
+    userId = await  user.response.id
+    const userData = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/User/${userId}`);
+    realUserData = userData.response
+  }
 
+  const allUserData = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/all")
+  const realAllUserData =  allUserData ;
+  console.log(realAllUserData)
+ 
   return (
     <>
       <div className="detailPage">
         <div className="headerDetail">
           <Goback />
-          <Edit id={id} data={data}/>
+          <Edit id={id} data={data} userId={userId}/>
         </div>
         <div key={data?.id} className="cardsContainer">
           <div className="leftcontentCard">
@@ -31,11 +42,11 @@ export default async function Details({ id }) {
           </div>
           <div className="commentBox">
             <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
-            <p className="commentCount">{data?.comments}</p>
+            <p className="commentCount">{data?.comments.length}</p>
           </div>
         </div>
-        <Comments />
-        <AddComment />
+        <Comments realAllUserData={realAllUserData} data={data} userId={userId}/>
+        <AddComment userId={userId} id={id}  />
       </div>
     </>
   );

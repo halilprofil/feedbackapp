@@ -8,6 +8,7 @@ import Empty from "../empty/empty";
 export default async function Cards() {
   const { response } = await getFeedback();
   const data = response || [];
+  
 
   return (
     <div className="containerC">

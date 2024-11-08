@@ -6,7 +6,8 @@ import { AdvancedFetch } from "@/utils/advancedfetch";
 import { useState } from "react";
 import { EditFeedbacks } from "@/app/api/action";
 
-export default function EditFeedback({ id ,data , show , setShow}) {
+export default function EditFeedback({ id ,data , show , setShow , userId}) {
+  console.log(userId);
   
 
   
@@ -34,13 +35,15 @@ export default function EditFeedback({ id ,data , show , setShow}) {
               <option value="Bug">Bug</option>
             </select>
           </div>
-          <input type="text" name="userId" hidden value="1a4e85ac-e862-4a68-a42d-56cb2ec8b8df" />
+          <input type="text" name="userId" hidden value={userId}/>
 
           <div>
             <p>Update Status</p>
             <label htmlFor="status">Change feedback state</label>
             <select name="status" id="status">
               <option value="planned">Planned</option>
+              <option value="In-Progress">In-Progress</option>
+              <option value="Live">Live</option>
             </select>
           </div>
 
