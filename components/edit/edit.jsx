@@ -40,9 +40,9 @@ export default function EditFeedback({ id ,data , show , setShow , userId}) {
           <div>
             <p>Update Status</p>
             <label htmlFor="status">Change feedback state</label>
-            <select name="status" id="status">
-              <option value="planned">Planned</option>
-              <option value="In-Progress">In-Progress</option>
+            <select name="status" id="status" defaultValue={data.status}>
+              <option value="Planned">Planned</option>
+              <option value="InProgress">In-Progress</option>
               <option value="Live">Live</option>
             </select>
           </div>

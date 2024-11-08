@@ -5,7 +5,7 @@ import { AdvancedFetch } from "@/utils/advancedfetch";
 import Login from "../login/login";
 import Logout from "../login/logout";
 
-export default async function Sidebar() {
+export default async function Sidebar({statusPlanned, statusProgress , statusLive}) {
   const {response} = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
   console.log(response);
  
@@ -19,7 +19,7 @@ export default async function Sidebar() {
           {response !== null && <><p>wellcome {response.nickname} </p> <Logout/></> }
         </div>
         <Filter/>
-        <Roadmap />
+        <Roadmap statusPlanned={statusPlanned} statusProgress={statusProgress} statusLive={statusLive}/>
       </div>
     </>
   );
