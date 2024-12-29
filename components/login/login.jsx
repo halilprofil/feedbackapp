@@ -16,7 +16,7 @@ export default function Login() {
 
     return (
         <>
-            <dialog className="modal" open={true}>
+            <dialog className="modal" open={false}>
                 <h2>{isSignup ? "Create an Account" : "Join Feedback App"}</h2>
 
                 {/* Login formu */}
