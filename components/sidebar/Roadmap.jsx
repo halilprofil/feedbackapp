@@ -30,7 +30,7 @@ export default function Roadmap({statusPlanned , statusProgress , statusLive}) {
             <Image width={8} height={8} src="/assets/BlueDot.svg" alt="" />
             <p className="roadmapCategory">Live</p>
           </div>
-          <p className="roadmapNumber">{statusLive.leng}</p>
+          <p className="roadmapNumber">{statusLive.length}</p>
         </div>
       </div>
     </div>

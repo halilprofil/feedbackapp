@@ -53,7 +53,7 @@ if (!detail) {
     return { success: "Feedback başarıyla oluşturldu." };
   }
 
-  return { error: "Failed to create feedback. Please try again." };
+  return { error: "Hata oluştu tekrar dene" };
 }
 
 
@@ -110,64 +110,72 @@ export async function loginUser(prevState, formData) {
   const email = formData.get("email");
   const password = formData.get("password");
 
-  // Eğer email veya password boşsa, hata mesajı döndür
+  // Email ve Şifre boşluk kontrolleri
   if (!email) {
-      return { error: "Email alanı boş olamaz" };
+      return { error: "Email alanı boş olamaz." };
   }
 
   if (!password) {
-      return { error: "Şifre alanı boş olamaz" };
+      return { error: "Şifre alanı boş olamaz." };
   }
 
   try {
       const response = await fetch("https://feedback.nazlisunay.com.tr/api/User/login", {
           method: "POST",
           headers: {
-              "Content-type": "application/json"
+              "Content-Type": "application/json"
           },
-          body: JSON.stringify({
-              email,
-              password
-          }),
+          body: JSON.stringify({ email, password }),
           credentials: "include"
       });
 
+      // Response'u Text Olarak Al
       const data = await response.text();
+      console.log("Response Data:", data);
 
+      // Hata durumlarını kontrol et
       if (!response.ok) {
-          console.log(response.status);
-          if(response.status === 401){
-            return {
-              error: "şifre veya kullanıcı email'i yanlış"
-            }
+          console.log("Hata oluştu, durum kodu:", response.status);
+          if (response.status === 401) {
+              return { error: "Şifre veya kullanıcı email'i yanlış." };
           }
-          return {
-              error: " Giriş İşlemi sırasında bir hata oluştu."
-          };
+          return { error: "Giriş işlemi sırasında bir hata oluştu." };
       }
 
-      // Cookie'yi işleyin
+      // Cookie'yi işleme
       const responseCookie = response.headers.get("set-cookie");
-      const cookiesArray = responseCookie.split(',');
-      const a = cookiesArray.flatMap(x => x.split(";"));
+      if (!responseCookie) {
+          console.warn("Set-Cookie header bulunamadı!");
+          return { error: "Giriş başarılı, ancak oturum cookie'si alınamadı." };
+      }
+
+      const cookiesArray = responseCookie.split(",");
+      const parsedCookies = cookiesArray.flatMap(x => x.split(";"));
       const cookiesObject = {};
-      a.forEach(cookie => {
-          const [key, value] = cookie.trim().split('=');
+      parsedCookies.forEach(cookie => {
+          const [key, value] = cookie.trim().split("=");
           cookiesObject[key] = value;
       });
 
-      console.log(cookiesObject);
+      console.log("Çözümlenmiş Cookie Nesnesi:", cookiesObject);
 
-      // .AspNetCore.Identity.Application cookie'yi ayarlayın
-      cookies().set(".AspNetCore.Identity.Application", cookiesObject[".AspNetCore.Identity.Application"]);
+      // .AspNetCore.Identity.Application cookie'yi ayarla
+      if (cookiesObject[".AspNetCore.Identity.Application"]) {
+          cookies().set(".AspNetCore.Identity.Application", cookiesObject[".AspNetCore.Identity.Application"]);
+      } else {
+          console.warn(".AspNetCore.Identity.Application cookie bulunamadı!");
+          return { error: "Giriş başarılı, ancak oturum cookie'si doğru şekilde alınamadı." };
+      }
 
+      // Başarı durumunu döndür
+      console.log("Giriş işlemi başarılı!");
       return { success: "Giriş başarılı!" };
-
   } catch (error) {
-      console.error(error);
-      return { error: "Bir hata oluştu" };
+      console.error("Beklenmedik bir hata oluştu:", error);
+      return { error: "Bir hata oluştu. Lütfen tekrar deneyin." };
   }
 }
+
 
 
 
@@ -268,7 +276,7 @@ export async function signupUser(prevState, formData) {
 
       if (!response.ok) {
           
-          console.log(response  );
+          console.log(response);
           if(response.status === 400){
             return {
               error: "şifreniz büyük küçük harf numara ve noktalama işareti içermelidir."

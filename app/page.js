@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import styles from "./page.module.css";
 import Header from "@/components/header/header";
@@ -18,10 +19,6 @@ export default async function Home() {
   const statusPlanned = data.filter(x=> x.status === "Planned");
   const statusProgress = data.filter(x=> x.status === "InProgress");
   const statusLive = data.filter(x=> x.status === "Live");
-
-
-
-  
 
   return (
     <>

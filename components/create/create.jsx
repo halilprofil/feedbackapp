@@ -1,17 +1,31 @@
 "use client";
-
 import Image from "next/image";
 import "./create.css";
 import { useFormState } from "react-dom";
 import { CreateFeedbacks } from "@/app/api/action";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
+import Login from "../login/login";
 
 export default function CreateFeedback({ show, setShow, userId }) {
   const [state, action] = useFormState(CreateFeedbacks, null);
+  const dialogRef = useRef(null);
+  useEffect(() => {
+    console.log(state?.success)
+    console.log();
+    if(state?.error){
+        toast.error(state?.error)
+    }
+    if(state?.success){
+        toast.success(state?.success)
+        dialogRef.current.close()
+
+    }
+  },[state]);
 
   return (
     <>
-      <dialog open={show}>
+      {userId && <dialog ref={dialogRef} open={show}>
         <form action={action} className="createForm">
           <h3>Create New Feedback</h3>
           <div>
@@ -57,10 +71,7 @@ export default function CreateFeedback({ show, setShow, userId }) {
             <Image className="img2" src="/assets/+.svg" width={16} height={16} alt="Plus Icon" />
           </div>
         </form>
-        
-        {state?.error && <div className="error">{state.error}</div>}
-        {state?.success && <div className="error">{state.success}</div>}
-      </dialog>
+      </dialog>}
     </>
   );
 }
