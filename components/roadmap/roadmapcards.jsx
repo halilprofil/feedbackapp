@@ -2,11 +2,20 @@ import Image from "next/image";
 import Likes from "../cards/likes";
 import RoadMapHeader from "./header";
 import Link from "next/link";
+import { AdvancedFetch } from "@/utils/advancedfetch";
 
-export default function RoadMapsCards({ statusPlanned, statusProgress, statusLive }) {
+export default async function RoadMapsCards({ statusPlanned, statusProgress, statusLive }) {
+  const user = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
+  console.log(user.status);
+  let userId;
+  if(user.status !== 404){
+    userId = user.response.id
+
+  }
+  
   return (
     <>
-      <RoadMapHeader />
+      <RoadMapHeader userId={userId}/>
       <div className="roadmap-container">
         {/* Planned Column */}
         <div className="card-colon">

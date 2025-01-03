@@ -15,7 +15,7 @@ export default async function Details({ id }) {
   let userId;
   let realUserData;
   if(user.status !== 404){
-    userId = await  user.response.id
+    userId = await user.response.id
     const userData = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/User/${userId}`);
     realUserData = userData.response
   }

@@ -9,11 +9,6 @@ export default function AddFeedBackBtn({userId}) {
   const [show, setShow] = useState(false);
   const [login, setLogin] = useState(false);
 
-  function openModal() {
-    setShow(!show);
-  }
-
-  
   useEffect(() => {
     console.log(login)
     if(!userId){
@@ -24,7 +19,7 @@ export default function AddFeedBackBtn({userId}) {
 
   return (
     <>
-      <button onClick={openModal} className="add-feedback-btn">
+      <button onClick={()=> setShow(!show)} className="add-feedback-btn">
         + Add Feedback
       </button>
       <CreateFeedback show={show} setShow={setShow} userId = {userId}/>

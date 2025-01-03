@@ -1,17 +1,20 @@
 "use client";
 import Image from "next/image";
 import "./edit.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { DeleteFeedbacks, EditFeedbacks } from "@/app/api/action";
 import { useFormState } from "react-dom";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import Login from "../login/login";
 
-export default function EditFeedback({ id, data, show, setShow, userId }) {
+export default function EditFeedback({ id, data, show, setShow, userId , login }) {
   const [state, action] = useFormState(EditFeedbacks, null);
   const [deleteState, deleteAction] = useFormState(DeleteFeedbacks, null);
   const dialogRef = useRef(null);
   const router = useRouter();
+  console.log(login);
+  
 
   useEffect(() => {
     if (state?.editError) {
@@ -37,7 +40,7 @@ export default function EditFeedback({ id, data, show, setShow, userId }) {
 
   return (
     <>
-      <dialog ref={dialogRef} open={show}>
+    {userId &&  <dialog ref={dialogRef} open={show}>
         <form action={action}> {/* Save Feedback işlemi */}
           <input type="hidden" name="postId" value={id} />
           <h3>Editing ‘Add a dark theme option’</h3>
@@ -123,7 +126,9 @@ export default function EditFeedback({ id, data, show, setShow, userId }) {
           height={20}
           alt="Edit Icon"
         />
-      </dialog>
+      </dialog>}
+      {login && <Login login={login}/>}
+     
     </>
   );
 }
