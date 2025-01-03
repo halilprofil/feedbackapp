@@ -3,12 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Roadmap({statusPlanned , statusProgress , statusLive}) {
+export default function Roadmap({ statusPlanned, statusProgress, statusLive }) {
   return (
     <div className="roadmap">
       <div className="roadmapHeader">
         <h1>Roadmap</h1>
-        <Link href={"/roadmap"}><button>view</button></Link>
+        <Link href={"/roadmap"}>
+          <button>view</button>
+        </Link>
       </div>
       <div className="roadmapCategoriesBox">
         <div className="flexbox">
@@ -30,7 +32,7 @@ export default function Roadmap({statusPlanned , statusProgress , statusLive}) {
             <Image width={8} height={8} src="/assets/BlueDot.svg" alt="" />
             <p className="roadmapCategory">Live</p>
           </div>
-          <p className="roadmapNumber">{statusLive.leng}</p>
+          <p className="roadmapNumber">{statusLive.length}</p>
         </div>
       </div>
     </div>
