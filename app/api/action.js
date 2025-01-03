@@ -24,18 +24,17 @@ export async function CreateFeedbacks(prevState, formData) {
   const status = formData.get("status");
 
   if (!title) {
-    return { title: "bu alan zorunludur" };
+    return { title: "title alanı zorunludur" };
 }
 
 if (!category) {
-  return { category: "bu alan zorunludur" };
+  return { category: "category alanı zorunludur" };
 }
 
 if (!detail) {
-  return { detail: "bu alan zorunludur" };
+  return { detail: "detail alanı zorunludur" };
 }
 
-  // API'ye istek gönder
   const response = await fetch("https://feedback.nazlisunay.com.tr/api/Opinions", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -53,31 +52,48 @@ if (!detail) {
     return { success: "Feedback başarıyla oluşturldu." };
   }
 
-  return { error: "Hata oluştu tekrar dene" };
+  return { error: "Hata oluştu tekrar deneyiniz." };
 }
 
 
 
-export async function EditFeedbacks(formData) {
+export async function EditFeedbacks(prevState,formData) {
   const title = formData.get("title");
   const category = formData.get("category");
   const description = formData.get("detail");
   const userId = formData.get("userId");
-  const status = formData.get("status");
+  const status1 = formData.get("status");
   const postId = formData.get("postId");
-  console.log(formData.get("status"));
 
-  const {response} = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${postId}`, "PUT", {
+  if (!title) {
+    return { title: "title alanı zorunludur" };
+}
+
+if (!category) {
+  return { category: "category alanı zorunludur" };
+}
+
+if (!status1) {
+  return { status1: "detail alanı zorunludur" };
+}
+
+
+  const {response , error , status} = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${postId}`, "PUT", {
     title,
     category,
     description,
     userId,
-    status,
+    status1,
   });
 
-  console.log(response);
+  if(response){
+    return {success : "feedback editlendi"}
+  }
 
- 
+  if(error){
+    return {editError : "feedback editlenemedi tekrar deneyiniz."}
+  }
+
 }
 
 export async function Addcomments(formData) {
@@ -94,15 +110,23 @@ export async function Addcomments(formData) {
     userId,
     opinionId : Number(postId),
   });
-
   console.log(response);
 
  
 }
 
-export async function DeleteFeedbacks(id) {
-  const { response } = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/12`);
-  console.log(response);
+export async function DeleteFeedbacks(prevState, formData) {
+  const postId = formData.get("postId")
+  const response = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${postId}`, "DELETE");
+  console.log(JSON.stringify(response, null, 2));
+  if(response.ok){
+    return {success : "feedback başarıyla silindi"}
+  }
+
+  if(!response.ok){
+    return {error : "feedback silinirken bir hata oluştu."}
+  }
+
 }
 
 

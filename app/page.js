@@ -12,6 +12,7 @@ import RoadMapsCards from "@/components/roadmap/roadmapcards";
 import { getFeedback, UserMe } from "@/utils/fetch";
 import Login from "@/components/login/login";
 import { AdvancedFetch } from "@/utils/advancedfetch";
+import { Toaster } from "sonner";
 
 export default async function Home() {
   const {response} = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
@@ -27,6 +28,7 @@ export default async function Home() {
         <div className="rightContainer">
           <Header />
           <Cards />
+          <Toaster position="top-center"/>
         </div>
       </div>
     </>

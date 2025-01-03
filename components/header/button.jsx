@@ -28,7 +28,7 @@ export default function AddFeedBackBtn({userId}) {
         + Add Feedback
       </button>
       <CreateFeedback show={show} setShow={setShow} userId = {userId}/>
-      <Login login={login}/>
+      {!userId && <Login login={login}/>}
     </>
   );
 }

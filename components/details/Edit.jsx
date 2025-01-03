@@ -10,7 +10,7 @@ export default function Edit({id, data, userId}) {
   return(
 
     <>
-    <button onClick={()=> setShow(true)} className="editBtn">Edit Feedback</button>
+    <button onClick={()=> setShow(!show)} className="editBtn">Edit Feedback</button>
     <EditFeedback id={id} data={data} show={show} setShow={setShow} userId={userId}/>
     </>
   ) ;
