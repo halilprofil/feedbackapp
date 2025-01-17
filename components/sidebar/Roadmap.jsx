@@ -2,12 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Roadmap({statusPlanned , statusProgress , statusLive}) {
+export default function Roadmap({ statusPlanned, statusProgress, statusLive }) {
   return (
     <div className="roadmap">
       <div className="roadmapHeader">
         <h1>Roadmap</h1>
-        <Link href={"/roadmap"}><button>view</button></Link>
+        <Link href={"/roadmap"}>
+          <button>view</button>
+        </Link>
       </div>
       <div className="roadmapCategoriesBox">
         <div className="flexbox">

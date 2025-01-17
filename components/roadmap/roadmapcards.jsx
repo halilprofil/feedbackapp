@@ -25,18 +25,20 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
           </div>
 
           {statusPlanned.map((x) => (
-            <Link key={x.id} href={`detail/${x.id}`}>
+            <Link className="linkcss" key={x.id} href={`detail/${x.id}`}>
               <div className="cards">
-                <p>
-                  <Image src="/assets/OrangeDot" width={10} height={10} alt="Orange Dot" /> Ideas prioritized for research
-                </p>
-                <h4>{x.title}</h4>
-                <p>{x.description}</p>
-                <p>{x.category}</p>
-                <Likes />
-                <div className="commentBox">
-                  <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
-                  <p className="commentCount">{x.comment || 0}</p>
+                <div className="cardsTop">
+                  <p>Ideas prioritized for research</p>
+                  <h4>{x.title}</h4>
+                  <p>{x.description}</p>
+                  <p className="categorieBox">{x.category}</p>
+                </div>
+                <div className="likesnCommentDiv">
+                  <Likes />
+                  <div className="commentBox">
+                    <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
+                    <p className="commentCount">{x.comment || 0}</p>
+                  </div>
                 </div>
               </div>
             </Link>
@@ -51,18 +53,20 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
           </div>
 
           {statusProgress.map((x) => (
-            <Link key={x.id} href={`detail/${x.id}`}>
+            <Link className="linkcss" key={x.id} href={`detail/${x.id}`}>
               <div className="cards">
-                <p>
-                  <Image src="/assets/PurpleDot" width={10} height={10} alt="Purple Dot" /> Currently being developed
-                </p>
-                <h4>{x.title}</h4>
-                <p>{x.description}</p>
-                <p>{x.category}</p>
-                <Likes />
-                <div className="commentBox">
-                  <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
-                  <p className="commentCount">{x.comment || 0}</p>
+                <div className="cardsTop">
+                  <p>Currently being developed</p>
+                  <h4>{x.title}</h4>
+                  <p>{x.description}</p>
+                  <p className="categorieBox">{x.category}</p>
+                </div>
+                <div className="likesnCommentDiv">
+                  <Likes />
+                  <div className="commentBox">
+                    <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
+                    <p className="commentCount">{x.comment || 0}</p>
+                  </div>
                 </div>
               </div>
             </Link>
@@ -77,18 +81,20 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
           </div>
 
           {statusLive.map((x) => (
-            <Link key={x.id} href={`detail/${x.id}`}>
+            <Link className="linkcss" key={x.id} href={`detail/${x.id}`}>
               <div className="cards">
-                <p>
-                  <Image src="/assets/BlueDot" width={10} height={10} alt="Blue Dot" /> Released features
-                </p>
-                <h4>{x.title}</h4>
-                <p>{x.description}</p>
-                <p>{x.category}</p>
-                <Likes />
-                <div className="commentBox">
-                  <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
-                  <p className="commentCount">{x.comment || 0}</p>
+                <div className="cardsTop">
+                  <p>Released features</p>
+                  <h4>{x.title}</h4>
+                  <p>{x.description}</p>
+                  <p className="categorieBox">{x.category}</p>
+                </div>
+                <div className="likesnCommentDiv">
+                  <Likes />
+                  <div className="commentBox">
+                    <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
+                    <p className="commentCount">{x.comment || 0}</p>
+                  </div>
                 </div>
               </div>
             </Link>
