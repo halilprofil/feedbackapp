@@ -96,10 +96,14 @@ if (!status1) {
 
 }
 
-export async function Addcomments(formData) {
+export async function Addcomments(prevState,formData) {
   const comment = formData.get("comment");
   const userId = formData.get("userId");
   const postId = formData.get("postId");
+  if(!comment){
+    return{ error: "yorum alanı boş olamaz."}
+
+  }
   console.log(postId)
   console.log(userId);
 
@@ -110,7 +114,12 @@ export async function Addcomments(formData) {
     userId,
     opinionId : Number(postId),
   });
-  console.log(response);
+  if(response){
+    return {success : "yorumunuz başarıyla oluşturuldu."}
+  }
+  if(!response){
+    return {error : "yorum eklenirken bir hata oluştu tekrar deneyin."}
+  }
 
  
 }
