@@ -1,5 +1,6 @@
 import Details from "@/components/details/Details";
 import { AdvancedFetch } from "@/utils/advancedfetch";
+import { Toaster } from "sonner";
 
 export default async function detail({params}) {
   const {id} = params;
@@ -11,6 +12,7 @@ export default async function detail({params}) {
   return (
     <>
       <Details id={id} />
+      <Toaster position="top-center"/>
     </>
   );
 }

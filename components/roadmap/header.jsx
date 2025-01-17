@@ -2,7 +2,9 @@ import Goback from "../details/Goback";
 import AddFeedBackBtn from "../header/button";
 import "./roadmap.css"
 
-export default function RoadMapHeader(){
+export default function RoadMapHeader({userId}){
+
+
     return(
         
         <>
@@ -11,7 +13,7 @@ export default function RoadMapHeader(){
                  <Goback/>
                  <h3>Roadmap</h3>
                 </div>
-                <AddFeedBackBtn/>
+                <AddFeedBackBtn userId={userId}/>
             </div>
         </>
 

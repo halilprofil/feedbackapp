@@ -2,21 +2,59 @@
 import "./login.css"
 import { useFormState } from "react-dom"
 import { loginUser, signupUser } from "@/app/api/action"; // signupUser'ı ekledik
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { toast, Toaster } from "sonner";
 
-export default function Login() {
+export default function Login({login}) {
+    const dialogRef = useRef(null);
     const [state, action] = useFormState(loginUser, null);
     const [signupState, signupAction] = useFormState(signupUser, null); // Signup için yeni useFormState
-
     const [isSignup, setIsSignup] = useState(false); // Formun hangi modda olduğunu tutan state
+    
+    useEffect(() => {
+        // Eğer dialog açık değilse, aç
+        if (dialogRef.current && !dialogRef.current.open) {
+            dialogRef.current.showModal();
+        }
+    }, [login]);
+
+    useEffect(() => {
+        console.log(state?.success)
+        console.log();
+        if(state?.error){
+            toast.error(state?.error)
+        }
+        if(state?.success){
+            toast.success(state?.success)
+            dialogRef.current.close()
+
+        }
+      },[state]);
+
+      useEffect(() => {
+        console.log(signupState?.success)
+        console.log();
+        if(signupState?.error){
+            toast.error(signupState?.error)
+        }
+        if(signupState?.success){
+            toast.success(signupState?.success)
+            dialogRef.current.close()
+
+        }
+      },[signupState]);
 
     const toggleForm = () => {
         setIsSignup(!isSignup);
     };
+    const closeDialog = ()=>{
+        dialogRef.current.close()
+    };
 
     return (
         <>
-            <dialog className="modal" open={true}>
+        <Toaster position="top-center"/>
+            <dialog ref={dialogRef} className="modal" open={true}>
                 <h2>{isSignup ? "Create an Account" : "Join Feedback App"}</h2>
 
                 {/* Login formu */}
@@ -27,11 +65,11 @@ export default function Login() {
 
                         <label htmlFor="email">Email</label>
                         <input id="email" name="email" type="email" />
-                        {state?.email?.error && <div className="error">{state.email.error}</div>}
+                        
 
                         <label htmlFor="password">Password</label>
                         <input id="password" name="password" type="password" />
-                        {state?.password?.error && <div className="error">{state.password.error}</div>}
+                        
 
                         <button>Log in</button>
 
@@ -78,10 +116,9 @@ export default function Login() {
                     </form>
                 )}
 
-                <button className="closeModal">x</button>
+                <button onClick={closeDialog} className="closeModal">x</button>
 
-                {/* Genel hata mesajı */}
-                {(state?.error || signupState?.error) && <div className="error">{state?.error || signupState?.error}</div>}
+    
             </dialog>
         </>
     );
