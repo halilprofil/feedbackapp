@@ -24,29 +24,16 @@ export async function CreateFeedbacks(prevState, formData) {
   const status = formData.get("status");
 
   if (!title) {
-<<<<<<< HEAD
-    return { title: "bu alan zorunludur" };
-  }
-
-  if (!category) {
-    return { category: "bu alan zorunludur" };
-  }
-
-  if (!detail) {
-    return { detail: "bu alan zorunludur" };
-  }
-=======
     return { title: "title alanı zorunludur" };
-}
+ }
 
 if (!category) {
   return { category: "category alanı zorunludur" };
-}
+ }
 
 if (!detail) {
   return { detail: "detail alanı zorunludur" };
-}
->>>>>>> 3495365132873871fd14d5a4f6eeee3aac8b7529
+ }
 
   const response = await fetch("https://feedback.nazlisunay.com.tr/api/Opinions", {
     method: "POST",
@@ -68,13 +55,9 @@ if (!detail) {
   return { error: "Hata oluştu tekrar deneyiniz." };
 }
 
-<<<<<<< HEAD
-export async function EditFeedbacks(formData) {
-=======
 
 
 export async function EditFeedbacks(prevState,formData) {
->>>>>>> 3495365132873871fd14d5a4f6eeee3aac8b7529
   const title = formData.get("title");
   const category = formData.get("category");
   const description = formData.get("detail");
@@ -82,9 +65,6 @@ export async function EditFeedbacks(prevState,formData) {
   const status1 = formData.get("status");
   const postId = formData.get("postId");
 
-<<<<<<< HEAD
-  const { response } = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${postId}`, "PUT", {
-=======
   if (!title) {
     return { title: "title alanı zorunludur" };
 }
@@ -99,7 +79,6 @@ if (!status1) {
 
 
   const {response , error , status} = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${postId}`, "PUT", {
->>>>>>> 3495365132873871fd14d5a4f6eeee3aac8b7529
     title,
     category,
     description,
@@ -107,9 +86,6 @@ if (!status1) {
     status1,
   });
 
-<<<<<<< HEAD
-  console.log(response);
-=======
   if(response){
     return {success : "feedback editlendi"}
   }
@@ -118,22 +94,17 @@ if (!status1) {
     return {editError : "feedback editlenemedi tekrar deneyiniz."}
   }
 
->>>>>>> 3495365132873871fd14d5a4f6eeee3aac8b7529
 }
 
 export async function Addcomments(prevState,formData) {
   const comment = formData.get("comment");
   const userId = formData.get("userId");
   const postId = formData.get("postId");
-<<<<<<< HEAD
-  console.log(postId);
-=======
   if(!comment){
     return{ error: "yorum alanı boş olamaz."}
 
   }
   console.log(postId)
->>>>>>> 3495365132873871fd14d5a4f6eeee3aac8b7529
   console.log(userId);
 
   const { response } = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Comment`, "POST", {
@@ -141,10 +112,6 @@ export async function Addcomments(prevState,formData) {
     userId,
     opinionId: Number(postId),
   });
-<<<<<<< HEAD
-
-  console.log(response);
-=======
   if(response){
     return {success : "yorumunuz başarıyla oluşturuldu."}
   }
@@ -153,7 +120,6 @@ export async function Addcomments(prevState,formData) {
   }
 
  
->>>>>>> 3495365132873871fd14d5a4f6eeee3aac8b7529
 }
 
 export async function DeleteFeedbacks(prevState, formData) {
@@ -176,64 +142,6 @@ export async function loginUser(prevState, formData) {
 
   // Email ve Şifre boşluk kontrolleri
   if (!email) {
-<<<<<<< HEAD
-    return { error: "Email alanı boş olamaz" };
-  }
-
-  if (!password) {
-    return { error: "Şifre alanı boş olamaz" };
-  }
-
-  try {
-    const response = await fetch("https://feedback.nazlisunay.com.tr/api/User/login", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        email,
-        password,
-      }),
-      credentials: "include",
-    });
-
-    const data = await response.text();
-
-    if (!response.ok) {
-      console.log(response.status);
-      if (response.status === 401) {
-        return {
-          error: "şifre veya kullanıcı email'i yanlış",
-        };
-      }
-      return {
-        error: " Giriş İşlemi sırasında bir hata oluştu.",
-      };
-    }
-
-    // Cookie'yi işleyin
-    const responseCookie = response.headers.get("set-cookie");
-    const cookiesArray = responseCookie.split(",");
-    const a = cookiesArray.flatMap((x) => x.split(";"));
-    const cookiesObject = {};
-    a.forEach((cookie) => {
-      const [key, value] = cookie.trim().split("=");
-      cookiesObject[key] = value;
-    });
-
-    console.log(cookiesObject);
-
-    // .AspNetCore.Identity.Application cookie'yi ayarlayın
-    cookies().set(".AspNetCore.Identity.Application", cookiesObject[".AspNetCore.Identity.Application"]);
-
-    return { success: "Giriş başarılı!" };
-  } catch (error) {
-    console.error(error);
-    return { error: "Bir hata oluştu" };
-  }
-}
-
-=======
       return { error: "Email alanı boş olamaz." };
   }
 
@@ -298,10 +206,6 @@ export async function loginUser(prevState, formData) {
   }
 }
 
-
-
-
->>>>>>> 3495365132873871fd14d5a4f6eeee3aac8b7529
 export async function logoutUser(prevState, formData) {
   try {
     const response = await fetch("https://feedback.nazlisunay.com.tr/api/User/logout", {
@@ -377,32 +281,6 @@ export async function signupUser(prevState, formData) {
   }
 
   try {
-<<<<<<< HEAD
-    const response = await fetch("https://feedback.nazlisunay.com.tr/api/User/register", {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
-        firstName,
-        lastName,
-        avatar,
-        nickname,
-        email,
-        password,
-      }),
-      credentials: "include",
-    });
-
-    const data = await response.text();
-
-    if (!response.ok) {
-      console.log(response);
-      if (response.status === 400) {
-        return {
-          error: "şifreniz büyük küçük harf numara ve noktalama işareti içermelidir.",
-        };
-=======
       const response = await fetch("https://feedback.nazlisunay.com.tr/api/User/register", {
           method: "POST",
           headers: {
@@ -432,7 +310,6 @@ export async function signupUser(prevState, formData) {
           return {
               error: "Kayıt işlemi sırasında bir hata  oluştu."
           };
->>>>>>> 3495365132873871fd14d5a4f6eeee3aac8b7529
       }
       return {
         error: "Kayıt işlemi sırasında bir hata  oluştu.",
@@ -459,4 +336,4 @@ export async function signupUser(prevState, formData) {
     console.error(error);
     return { error: "Bir hata oluştu" };
   }
-}
+
