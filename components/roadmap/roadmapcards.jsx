@@ -6,16 +6,15 @@ import { AdvancedFetch } from "@/utils/advancedfetch";
 
 export default async function RoadMapsCards({ statusPlanned, statusProgress, statusLive }) {
   const user = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
-  console.log(user.status);
+  console.log("status", statusPlanned, statusProgress);
   let userId;
-  if(user.status !== 404){
-    userId = user.response.id
-
+  if (user.status !== 404) {
+    userId = user.response.id;
   }
-  
+
   return (
     <>
-      <RoadMapHeader userId={userId}/>
+      <RoadMapHeader userId={userId} />
       <div className="roadmap-container">
         {/* Planned Column */}
         <div className="card-colon">

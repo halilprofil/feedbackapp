@@ -8,7 +8,6 @@ import Empty from "../empty/empty";
 export default async function Cards() {
   const { response } = await getFeedback();
   const data = response || [];
-  
 
   return (
     <div className="containerC">
@@ -26,13 +25,12 @@ export default async function Cards() {
               </div>
               <div className="commentBox">
                 <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
-                <p className="commentCount">{x.comments}</p>
               </div>
             </div>
           </Link>
         ))
       ) : (
-        <Empty/>
+        <Empty />
       )}
     </div>
   );

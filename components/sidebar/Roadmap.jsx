@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Roadmap({ statusPlanned, statusProgress, statusLive }) {
+  console.log("Roadmap", statusPlanned, statusProgress);
   return (
     <div className="roadmap">
       <div className="roadmapHeader">
