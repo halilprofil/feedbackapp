@@ -89,6 +89,7 @@ if (!status1) {
   if(response){
     return {success : "feedback editlendi"}
   }
+  console.log("edit hata ayıklama "+ status);
 
   if(error){
     return {editError : "feedback editlenemedi tekrar deneyiniz."}
