@@ -1,6 +1,4 @@
-import CreateFeedback from "@/components/create/create";
 import Header from "@/components/header/header";
-import Login from "@/components/login/login";
 import Sidebar from "@/components/sidebar/Sidebar";
 import { AdvancedFetch } from "@/utils/advancedfetch";
 

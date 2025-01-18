@@ -15,13 +15,26 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
   const router = useRouter();
   console.log(login);
   const handleDelete = async () => {
-    const result = await deleteAction({ postId: id });
-    if (result?.error) {
-      toast.error(result.error);
-    } else {
-      dialogRef.current.close();
-      router.push("/");
-      toast.success("Feedback deleted successfully!");
+    try {
+      const response = await fetch(`http://localhost:3000/api/Opinions/${id}`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        credentials: "include",
+      });
+
+      if (response.ok) {
+        toast.success("Feedback deleted successfully!");
+        setShow(false);
+        window.location.href = "/";
+      } else {
+        toast.error("Failed to delete feedback.");
+      }
+    } catch (error) {
+      toast.error("An error occurred while deleting feedback.");
+    } finally {
     }
   };
   useEffect(() => {
