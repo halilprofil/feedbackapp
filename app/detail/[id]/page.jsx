@@ -11,6 +11,7 @@ export default async function detail({params}) {
 
   return (
     <>
+     
       <Details id={id} />
       <Toaster position="top-center"/>
     </>
