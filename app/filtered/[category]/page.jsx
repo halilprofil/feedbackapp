@@ -13,7 +13,7 @@ export default async function Filtered({ params }) {
   return (
     <>
       {filteredData?.map((x) => (
-        <Link href={`/detail/${x.id}`}>
+        <Link href={`/detail/${x.id}`} key={x.id}>
           <div key={x.id} className="cardsContainer">
             <div className="leftcontentCard">
               <Likes voteCount={x.voteCount} />

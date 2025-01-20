@@ -53,7 +53,6 @@ export default function Login({login}) {
 
     return (
         <>
-        <Toaster position="top-center"/>
             <dialog ref={dialogRef} className="modal" open={true}>
                 <h2>{isSignup ? "Create an Account" : "Join Feedback App"}</h2>
 
@@ -74,7 +73,7 @@ export default function Login({login}) {
                         <button>Log in</button>
 
                         <div className="signUp">
-                            <p>Don't have an account?</p>
+                            <p>Don&apos;t have an account?</p>
                             <button type="button" onClick={toggleForm}>Sign up</button>
                         </div>
                     </form>

@@ -7,6 +7,5 @@ export default async function RoadMap() {
   const statusPlanned = data.filter((x) => x.status === "Planned");
   const statusProgress = data.filter((x) => x.status === "InProgress");
   const statusLive = data.filter((x) => x.status === "Live");
-
   return <RoadMapsCards statusPlanned={statusPlanned} statusProgress={statusProgress} statusLive={statusLive} />;
 }

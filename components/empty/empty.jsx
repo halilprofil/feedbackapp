@@ -9,7 +9,7 @@ export default function Empty(){
         <>
        <div className="empty-container">
         <div className="empty-context">
-            <Image src="/assets/dedective.png" width={130} height={130}></Image>
+            <Image src="/assets/dedective.png" width={130} height={130} alt="dedective"></Image>
             <div>
                 <h3>There is no feedback yet.</h3>
                 <p>Got a suggestion? Found a bug that needs to be squashed? We love hearing about new ideas to improve our app.</p>

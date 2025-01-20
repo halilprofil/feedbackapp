@@ -27,7 +27,6 @@ export default async function Home() {
         <div className="rightContainer">
           <Header />
           <Cards />
-          <Toaster position="top-center" />
         </div>
       </div>
     </>

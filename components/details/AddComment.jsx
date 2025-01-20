@@ -33,7 +33,7 @@ export default function AddComment({userId ,id}) {
     }
 
 
-  },[state])
+  },[state , router])
 
   function submitComment(e) {
     setChar(maxChar - e.target.value.length);

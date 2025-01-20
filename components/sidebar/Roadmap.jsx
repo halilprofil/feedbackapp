@@ -29,7 +29,7 @@ export default function Roadmap({ statusPlanned, statusProgress, statusLive }) {
         </div>
         <div className="flexbox">
           <div className="miniflex">
-            <Image width={8} height={8} src="/assets/BlueDot.svg" alt="" />
+            <Image width={8} height={8} src="/assets/BlueDot.svg" alt="bluedot" />
             <p className="roadmapCategory">Live</p>
           </div>
           <p className="roadmapNumber">{statusLive.length}</p>
