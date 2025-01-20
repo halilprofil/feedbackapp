@@ -6,10 +6,15 @@ import { AdvancedFetch } from "@/utils/advancedfetch";
 
 export default async function RoadMapsCards({ statusPlanned, statusProgress, statusLive }) {
   const user = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
-  console.log("status", statusPlanned, statusProgress);
+
   let userId;
-  if (user.status !== 404) {
+  if (user && user.status !== 404) {
     userId = user.response.id;
+  }
+
+  // Eğer herhangi bir durum verisi yoksa, yükleme mesajı göster
+  if (!statusPlanned || !statusProgress || !statusLive) {
+    return <p>Data is loading or unavailable.</p>;
   }
 
   return (
@@ -24,7 +29,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
           </div>
 
           {statusPlanned.map((x) => (
-            <Link className="linkcss" key={x.id} href={`detail/${x.id}`}>
+            <Link className="linkcss" key={x.id} href={x.id ? `detail/${x.id}` : '#'}>
               <div className="cards">
                 <div className="cardsTop">
                   <p>Ideas prioritized for research</p>
@@ -52,7 +57,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
           </div>
 
           {statusProgress.map((x) => (
-            <Link className="linkcss" key={x.id} href={`detail/${x.id}`}>
+            <Link className="linkcss" key={x.id} href={x.id ? `detail/${x.id}` : '#'}>
               <div className="cards">
                 <div className="cardsTop">
                   <p>Currently being developed</p>
@@ -80,7 +85,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
           </div>
 
           {statusLive.map((x) => (
-            <Link className="linkcss" key={x.id} href={`detail/${x.id}`}>
+            <Link className="linkcss" key={x.id} href={x.id ? `detail/${x.id}` : '#'}>
               <div className="cards">
                 <div className="cardsTop">
                   <p>Released features</p>
