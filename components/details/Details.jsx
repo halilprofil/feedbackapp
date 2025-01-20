@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Cards from "../cards/Cards";
+import Cards from "../cards/Card";
 import AddComment from "./AddComment";
 import "./details.css";
 import Edit from "./Edit";

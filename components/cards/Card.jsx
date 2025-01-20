@@ -5,7 +5,7 @@ import { getFeedback } from "@/utils/fetch";
 import Link from "next/link";
 import Empty from "../empty/empty";
 
-export default async function Cards() {
+export default async function Cards1() {
   const { response } = await getFeedback();
   const data = response || [];
 

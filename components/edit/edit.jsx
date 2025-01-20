@@ -48,17 +48,6 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
     }
   }, [state, router]);
 
-  useEffect(() => {
-    if (deleteState?.error) {
-      toast.error(deleteState?.error);
-    }
-    if (deleteState?.success) {
-      toast.success(deleteState?.success);
-      dialogRef.current.close();
-      router.refresh(); // Sayfayı yeniden yükler
-    }
-  }, [deleteState, router]);
-
   return (
     <>
       {userId && (
