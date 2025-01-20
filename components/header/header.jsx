@@ -9,7 +9,6 @@ export default async function Header() {
   const { response } = await getFeedback();
   const data = response;
   const user = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
-  console.log(user.status);
   let userId;
   if(user.status !== 404){
     userId = user.response.id
