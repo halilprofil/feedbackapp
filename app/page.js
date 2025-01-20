@@ -14,7 +14,7 @@ import { AdvancedFetch } from "@/utils/advancedfetch";
 import { Toaster } from "sonner";
 
 export default async function Home() {
-  const { response } = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
+  const { response } = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions") || [];
   const data = await response;
   const statusPlanned = data.filter((x) => x.status === "Planned");
   const statusProgress = data.filter((x) => x.status === "InProgress");
