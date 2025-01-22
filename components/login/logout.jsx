@@ -1,4 +1,5 @@
 "use client"
+export const dynamic = "force-dynamic";
 import "./login.css"
 import { useFormState } from "react-dom"
 import { loginUser, logoutUser } from "@/app/api/action";

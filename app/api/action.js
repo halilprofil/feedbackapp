@@ -81,7 +81,7 @@ export async function EditFeedbacks(prevState, formData) {
     return { status1: "detail alanı zorunludur" };
   }
 
-  const response = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${postId}`, "PUT", {
+  const  response = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${postId}`, "PUT", {
     id: postId,
     title,
     description,
@@ -93,7 +93,6 @@ export async function EditFeedbacks(prevState, formData) {
   if (response) {
     return { success: "feedback editlendi" };
   }
-  console.log("edit işlemi" + response + ".............." )
 
   if (error) {
     console.log(error);

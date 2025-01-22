@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Image from "next/image";
 import styles from "./page.module.css";
 import Header from "@/components/header/header";
@@ -14,8 +15,8 @@ import { AdvancedFetch } from "@/utils/advancedfetch";
 import { Toaster } from "sonner";
 
 export default async function Home() {
-  const { response } = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
-  const data = await response;
+  const { response } = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions") ;
+  const data = await response || [];
   const statusPlanned = data.filter((x) => x.status === "Planned");
   const statusProgress = data.filter((x) => x.status === "InProgress");
   const statusLive = data.filter((x) => x.status === "Live");
