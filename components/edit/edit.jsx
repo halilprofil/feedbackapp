@@ -17,6 +17,7 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
   const handleDelete = async () => {
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+      console.log("Delete URL:", apiUrl);
       const response = await fetch(`${apiUrl}/Opinions/${id}`, {
         method: "DELETE",
         headers: {
