@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Likes from "@/components/cards/likes";
 import { AdvancedFetch } from "@/utils/advancedfetch";
 import Image from "next/image";

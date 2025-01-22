@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import RoadMapsCards from "@/components/roadmap/roadmapcards";
 import { AdvancedFetch } from "@/utils/advancedfetch";
 

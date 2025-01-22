@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Details from "@/components/details/Details";
 import { AdvancedFetch } from "@/utils/advancedfetch";
 import { Toaster } from "sonner";

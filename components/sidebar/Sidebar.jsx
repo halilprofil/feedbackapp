@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import "./Sidebar.css";
 import Filter from "./filter";
 import Roadmap from "./Roadmap";

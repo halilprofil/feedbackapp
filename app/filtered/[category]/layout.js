@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Header from "@/components/header/header";
 import Sidebar from "@/components/sidebar/Sidebar";
 import { AdvancedFetch } from "@/utils/advancedfetch";

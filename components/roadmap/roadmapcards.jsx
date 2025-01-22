@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Image from "next/image";
 import Likes from "../cards/likes";
 import RoadMapHeader from "./header";
