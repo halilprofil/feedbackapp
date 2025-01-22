@@ -18,7 +18,7 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
     try {
       const apiUrl = process.env.NEXT_PUBLIC_API_URL;
       console.log("Delete URL:", apiUrl);
-      const response = await fetch(`${apiUrl}/Opinions/${id}`, {
+      const response = await fetch(`${apiUrl}/api/Opinions/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
