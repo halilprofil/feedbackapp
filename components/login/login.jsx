@@ -10,7 +10,7 @@ export default function Login({login}) {
     const dialogRef = useRef(null);
     const [state, action] = useFormState(loginUser, null);
     const [signupState, signupAction] = useFormState(signupUser, null); // Signup için yeni useFormState
-    const [isSignup, setIsSignup] = useState(false); // Formun hangi modda olduğunu tutan state
+    const [isSignup, setIsSignup] = useState(false); 
     
     useEffect(() => {
         // Eğer dialog açık değilse, aç
