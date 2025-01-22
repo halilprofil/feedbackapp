@@ -16,7 +16,7 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
   const router = useRouter();
   const handleDelete = async () => {
     try {
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL; // .env'den API URL'si alınıyor
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL;
       const response = await fetch(`${apiUrl}/Opinions/${id}`, {
         method: "DELETE",
         headers: {
