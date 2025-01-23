@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import "./edit.css";
+import styles from "./page.module.css";
 import { useEffect, useRef, useState } from "react";
 import { DeleteFeedbacks, EditFeedbacks } from "@/app/api/action";
 import { useFormState } from "react-dom";
@@ -93,21 +93,21 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
                 defaultValue={data.detail}
               ></textarea>
             </div>
-            <div className="buttons">
-              <button onClick={handleDelete} className="delete">
+            <div className={styles.buttons}>
+              <button onClick={handleDelete} className={styles.delete}>
                 Delete
               </button>
-              <button type="button" onClick={() => setShow(false)} className="cancel">
+              <button type="button" onClick={() => setShow(false)} className={styles.cancel}>
                 Cancel
               </button>
-              <button type="submit" className="save">
+              <button type="submit" className={styles.save}>
                 Save Feedback
               </button>
             </div>
           </form>
 
-          <Image className="img1" src="/assets/circle.svg" width={56} height={56} alt="Circle" />
-          <Image className="img2" src="/assets/imgedit.svg" width={20} height={20} alt="Edit Icon" />
+          <Image className={styles.img1} src="/assets/circle.svg" width={56} height={56} alt="Circle" />
+          <Image className={styles.img2} src="/assets/imgedit.svg" width={20} height={20} alt="Edit Icon" />
         </dialog>
       )}
       {login && <Login login={login} />}
