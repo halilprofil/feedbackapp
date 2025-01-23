@@ -11,8 +11,8 @@ export default async function Sidebar({ statusPlanned, statusProgress, statusLiv
     <>
       <div className={styles.Sidebar}>
         <div className={styles.header}>
-          <h3>Frontend Mentor</h3>
-          <p>Feedback Board</p>
+          <h3 className={styles.headerH}>Frontend Mentor</h3>
+          <p className={styles.headerP}>Feedback Board</p>
           {response !== null && (
             <>
               <p>wellcome {response.nickname} </p> <Logout />

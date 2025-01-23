@@ -39,11 +39,11 @@ export default function AddComment({ userId, id }) {
 
   return (
     <div className={styles.addComment}>
-      <h3>Add Comment</h3>
+      <h3 className={styles.addCommentH}>Add Comment</h3>
       <form ref={formRef} action={action}>
         <input type="text" hidden name="userId" value={userId} />
         <input type="number" hidden name="postId" value={id} />
-        <textarea
+        <textarea className={styles.addCommentTextarea}
           style={{
             border: warning ? "solid" : "initial",
             borderColor: warning ? "red" : "initial",
@@ -54,7 +54,7 @@ export default function AddComment({ userId, id }) {
           name="comment"
         ></textarea>
         <div className={styles.addCommentFooter}>
-          <p className={char <= 0 ? "warning" : ""}>{char} Characters left</p>
+          <p className={styles.addCommentFooterP}>{char} Characters left</p>
           <button className={styles.postCommentBtn} disabled={char <= 0}>
             Post Comment
           </button>

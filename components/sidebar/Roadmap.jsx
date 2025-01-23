@@ -7,9 +7,9 @@ export default function Roadmap({ statusPlanned, statusProgress, statusLive }) {
   return (
     <div className={styles.roadmap}>
       <div className={styles.roadmapHeader}>
-        <h1>Roadmap</h1>
+        <h1 className={styles.roadmapHeaderH}>Roadmap</h1>
         <Link href={"/roadmap"}>
-          <button>view</button>
+          <button className={styles.roadmapHeaderButton}>view</button>
         </Link>
       </div>
       <div className={styles.roadmapCategoriesBox}>

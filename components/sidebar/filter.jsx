@@ -13,21 +13,21 @@ export default function Filter() {
 
   return (
     <div className={styles.filterBox}>
-      <button onClick={handleAllBtn}>All</button>
+      <button className={styles.filterBoxButton} onClick={handleAllBtn}>All</button>
       <Link href={"/filtered/UI"}>
         <button>UI</button>
       </Link>
       <Link href={"/filtered/UX"}>
-        <button>UX</button>
+        <button className={styles.filterBoxButton} >UX</button>
       </Link>
       <Link href={"/filtered/Enhancement"}>
-        <button>Enhancement</button>
+        <button className={styles.filterBoxButton} >Enhancement</button>
       </Link>
       <Link href={"/filtered/Bug"}>
-        <button>Bug</button>
+        <button className={styles.filterBoxButton} >Bug</button>
       </Link>
       <Link href={"/filtered/Feature"}>
-        <button>Feature</button>
+        <button className={styles.filterBoxButton} >Feature</button>
       </Link>
     </div>
   );

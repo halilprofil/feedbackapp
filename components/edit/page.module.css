@@ -1,11 +1,11 @@
-dialog {
+.dialog {
   top: 50px;
   margin-inline: auto;
   border-radius: 10px;
   border: transparent;
   z-index: 1000;
 }
-form {
+.form {
   padding-left: 42px;
   padding-right: 42px;
   padding-bottom: 40px;
@@ -13,51 +13,17 @@ form {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  input {
-    /* width: 90%; */
-    height: 48px;
-    border-radius: 5px;
-    border: transparent;
-    background-color: #f7f8fd;
-    color: #3a4374;
-    padding-left: 15px;
-  }
-  select {
-    /* width: 90%; */
-    height: 48px;
-    border-radius: 5px;
-    border: transparent;
-    background-color: #f7f8fd;
-    color: #3a4374;
-    padding-left: 15px;
-  }
-  textarea {
-    /* width: 90%; */
-    height: 96px;
-    border-radius: 5px;
-    border: transparent;
-    background-color: #f7f8fd;
-    color: #3a4374 !important;
-    padding: 24px;
-  }
-  textarea::placeholder {
-    color: #3a4374;
-  }
-  label {
-    margin-bottom: 16px;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    p {
-      margin-bottom: 4px;
-    }
-  }
 }
 
-p {
+.formDiv{
+  display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+
+.formP{
+  margin-bottom: 4px;
   font-size: 14px;
   font-weight: 700;
   line-height: 20.23px;
@@ -66,13 +32,49 @@ p {
   color: #3a4374;
 }
 
-label {
+.formLabel {
+  margin-bottom: 16px;
   font-size: 14px;
   font-weight: 400;
   line-height: 20.23px;
   text-align: left;
   color: #647196;
 }
+
+.formTextarea {
+  /* width: 90%; */
+  height: 96px;
+  border-radius: 5px;
+  border: transparent;
+  background-color: #f7f8fd;
+  color: #3a4374 !important;
+  padding: 24px;
+}
+.formTextarea::placeholder {
+  color: #3a4374;
+}
+
+.formSelect {
+  /* width: 90%; */
+  height: 48px;
+  border-radius: 5px;
+  border: transparent;
+  background-color: #f7f8fd;
+  color: #3a4374;
+  padding-left: 15px;
+}
+
+.formİnput {
+  /* width: 90%; */
+  height: 48px;
+  border-radius: 5px;
+  border: transparent;
+  background-color: #f7f8fd;
+  color: #3a4374;
+  padding-left: 15px;
+}
+
+
 
 .buttons {
   display: flex;
@@ -130,7 +132,7 @@ label {
   left: 49px;
 }
 
-h3 {
+.formH {
   color: #3a4374;
   font-size: 24px;
   font-weight: 700;

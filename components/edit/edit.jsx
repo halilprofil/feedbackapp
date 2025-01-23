@@ -52,21 +52,21 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
   return (
     <>
       {userId && (
-        <dialog ref={dialogRef} open={show}>
-          <form action={action}>
+        <dialog className={styles.dialog} ref={dialogRef} open={show}>
+          <form className={styles.form} action={action}>
             {" "}
             {/* Save Feedback işlemi */}
-            <input type="hidden" name="postId" value={id} />
-            <h3>Editing ‘Add a dark theme option’</h3>
-            <div>
-              <p>Feedback Title</p>
-              <label htmlFor="titleEdit">Add a short, descriptive headline</label>
-              <input type="text" name="title" id="titleEdit" defaultValue={data.title} />
+            <input className={styles.formİnput} type="hidden" name="postId" value={id} />
+            <h3 className={styles.formH}>Editing ‘Add a dark theme option’</h3>
+            <div className={styles.formDiv}>
+              <p className={styles.formP}>Feedback Title</p>
+              <label className={styles.formLabel} htmlFor="titleEdit">Add a short, descriptive headline</label>
+              <input className={styles.formİnput} type="text" name="title" id="titleEdit" defaultValue={data.title} />
             </div>
-            <div>
-              <p>Category</p>
-              <label htmlFor="categoryEdit">Choose a category for your feedback</label>
-              <select name="category" id="categoryEdit" defaultValue={data.category}>
+            <div className={styles.formDiv}>
+              <p className={styles.formP}>Category</p>
+              <label className={styles.formLabel} htmlFor="categoryEdit">Choose a category for your feedback</label>
+              <select className={styles.formSelect} name="category" id="categoryEdit" defaultValue={data.category}>
                 <option value="feature">Feature</option>
                 <option value="UI">UI</option>
                 <option value="UX">UX</option>
@@ -74,20 +74,21 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
                 <option value="Bug">Bug</option>
               </select>
             </div>
-            <input type="hidden" name="userId" value={userId} />
-            <div>
-              <p>Update Status</p>
-              <label htmlFor="status">Change feedback state</label>
-              <select name="status" id="status" defaultValue={data.status}>
+            <input className={styles.formİnput} type="hidden" name="userId" value={userId} />
+            <div className={styles.formDiv}>
+              <p className={styles.formP}>Update Status</p>
+              <label className={styles.formLabel} htmlFor="status">Change feedback state</label>
+              <select className={styles.formSelect}  name="status" id="status" defaultValue={data.status}>
                 <option value="Planned">Planned</option>
                 <option value="InProgress">In-Progress</option>
                 <option value="Live">Live</option>
               </select>
             </div>
-            <div>
-              <p>Feedback Detail</p>
-              <label htmlFor="detailEdit">Include any specific comments on what should be improved, added, etc.</label>
+            <div className={styles.formDiv}>
+              <p className={styles.formP}>Feedback Detail</p>
+              <label className={styles.formLabel} htmlFor="detailEdit">Include any specific comments on what should be improved, added, etc.</label>
               <textarea
+                className={styles.formTextarea}
                 name="detail"
                 id="detailEdit"
                 placeholder="It would help people with light sensitivities and who prefer dark mode."

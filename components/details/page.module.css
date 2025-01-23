@@ -37,17 +37,19 @@
   align-items: center;
   border: none;
   background: none;
-  p {
-    color: #8c92b3 !important;
-  }
+}
 
-  h6 {
-    font-size: 14px;
+.gobackP{
+  color: #8c92b3 !important;
+}
+
+.gobackH{
+  font-size: 14px;
     font-weight: 700;
     line-height: 20.23px;
     text-align: left;
     color: #8c92b3 !important;
-  }
+
 }
 
 .goback h6:hover {
@@ -146,36 +148,41 @@
   border-radius: 10px;
   margin-bottom: 130px;
   width: 825px;
+}
 
-  h3 {
-    color: #3a4374;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 26.01px;
-    letter-spacing: -0.25px;
-    text-align: left;
-  }
+.addCommentH{
+  color: #3a4374;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26.01px;
+  letter-spacing: -0.25px;
+  text-align: left;
 
-  textarea {
-    background-color: #f7f8fd;
-    border: none;
-    padding: 24px;
-    border-radius: 10px;
-  }
+}
+
+.addCommentTextarea{
+  background-color: #f7f8fd;
+  border: none;
+  padding: 24px;
+  border-radius: 10px;
+
 }
 
 .addCommentFooter {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  p {
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 21.68px;
-    text-align: left;
-    color: #647196;
-  }
 }
+
+.addCommentFooterP{
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 21.68px;
+  text-align: left;
+  color: #647196;
+}
+
+
 
 .postCommentBtn {
   background-color: #ad1fea;

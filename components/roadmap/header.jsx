@@ -5,10 +5,10 @@ import styles from "./page.module.css";
 export default function RoadMapHeader({ userId }) {
   return (
     <>
-      <div className={styles.header - container}>
-        <div className={styles.right - content}>
+      <div className={styles.header-container}>
+        <div className={styles.right-content}>
           <Goback />
-          <h3>Roadmap</h3>
+          <h3 className={styles.roadmapH}>Roadmap</h3>
         </div>
         <AddFeedBackBtn userId={userId} />
       </div>

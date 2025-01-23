@@ -12,22 +12,26 @@
   padding-bottom: 24px;
   padding-top: 62px;
   border-radius: 10px;
-  h3 {
+}
+
+.headerH{
     font-size: 20px;
     font-weight: 700;
     line-height: 28.9px;
     letter-spacing: -0.25px;
     color: #ffffff;
     text-align: left;
-  }
-  p {
-    font-size: 15px;
-    font-weight: 500;
-    line-height: 21.68px;
-    text-align: left;
-    color: #ffffff;
-  }
 }
+
+.headerP{
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 21.68px;
+  text-align: left;
+  color: #ffffff;
+}
+
+
 
 .filterBox {
   border-radius: 10px;
@@ -36,24 +40,27 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px 14px;
-  button {
-    background-color: #f2f4ff;
-    max-width: 111px;
-    padding-inline: 16px;
-    padding-block: 6px;
-    color: #4661e6;
-    border-radius: 10px;
-    border: none;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 18.79px;
-    text-align: left;
-  }
-  button:hover {
-    background-color: #4661e6;
-    color: #ffffff;
-    cursor: pointer;
-  }
+}
+
+.filterBoxButton{
+  background-color: #f2f4ff;
+  max-width: 111px;
+  padding-inline: 16px;
+  padding-block: 6px;
+  color: #4661e6;
+  border-radius: 10px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18.79px;
+  text-align: left;
+}
+
+.filterBoxButton:hover{
+  background-color: #4661e6;
+  color: #ffffff;
+  cursor: pointer;
+
 }
 
 .roadmap {
@@ -66,26 +73,33 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 27px;
-  h1 {
-    color: #3a4374;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 26.01px;
-    letter-spacing: -0.25px;
-    text-align: left;
-  }
-  button {
-    color: #4661e6;
-    border: none;
-    background-color: #ffffff;
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 18.79px;
-    text-align: left;
-    text-decoration: underline;
-    cursor: pointer;
-  }
+
 }
+
+.roadmapHeaderH{
+  color: #3a4374;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26.01px;
+  letter-spacing: -0.25px;
+  text-align: left;
+}
+
+.roadmapHeaderButton{
+  color: #4661e6;
+  border: none;
+  background-color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18.79px;
+  text-align: left;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+
+
 
 .roadmapCategoriesBox {
   display: flex;

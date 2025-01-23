@@ -11,8 +11,8 @@ export default function Goback() {
   }
   return (
     <button onClick={handleGoBackBtn} className={styles.goback}>
-      <p>{"<"}</p>
-      <h6>Go Back</h6>
+      <p className={styles.gobackP}>{"<"}</p>
+      <h6 className={styles.gobackH}>Go Back</h6>
     </button>
   );
 }

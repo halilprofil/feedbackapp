@@ -6,9 +6,9 @@ export default function Filter() {
     <>
       <div>
         <form className={styles.filterForm}>
-          <label for="sortBy">Sort by :</label>
+          <label className={styles.filterFormLabel} for="sortBy">Sort by :</label>
           <div className={styles.selectBox}>
-            <select className={styles.select} name="sortBy" id="sortBy">
+            <select className={styles.filterFormSelect} name="sortBy" id="sortBy">
               <option value="mostUpvotes">Most Upvotes</option>
               <option value="leastUpvotes">Least Upvotes</option>
               <option value="mostComments">Most Comments</option>
