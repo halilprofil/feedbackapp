@@ -1,9 +1,11 @@
 "use client";
-export default function Likes({voteCount}) {
+import styles from "./page.module.css";
+
+export default function Likes({ voteCount }) {
   return (
-    <div className="likes">
-      <p className="likesSign">^</p>
-      <p className="likesCount">{voteCount}</p>
+    <div className={styles.likes}>
+      <p className={styles.likesSign}>^</p>
+      <p className={styles.likesCount}>{voteCount}</p>
     </div>
   );
 }
