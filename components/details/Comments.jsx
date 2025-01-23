@@ -1,12 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import styles from "./page.module.css";
 
 export default function Comments({ realAllUserData, data }) {
   const usersData = realAllUserData.response;
 
   return (
-    <div className="commentBoxes">
+    <div className={styles.commentBoxes}>
       <p className="commentsCount">{data.comments.length} Comments</p>
 
       {data.comments.map((comment) => {
@@ -19,24 +20,24 @@ export default function Comments({ realAllUserData, data }) {
         };
 
         return (
-          <div key={comment.id} className="commentInfo">
+          <div key={comment.id} className={styles.commentInfo}>
             {/* <Image 
                 width={40} 
                 height={40} 
                 src={user.avatar} 
                 alt="User Avatar" 
               /> */}
-            <div className="commentContent">
-              <div className="userInfo">
-                <div className="userInfoColumn">
-                  <p className="name">{`${user.firstName} ${user.lastName}`.trim()}</p>
-                  <p className="username">@{user.nickname}</p>
+            <div className={styles.commentContent}>
+              <div className={styles.userInfo}>
+                <div className={styles.userInfoColumn}>
+                  <p className={styles.name}>{`${user.firstName} ${user.lastName}`.trim()}</p>
+                  <p className={styles.username}>@{user.nickname}</p>
                 </div>
-                <button className="replyBtn">Reply</button>
+                <button className={styles.replyBtn}>Reply</button>
               </div>
-              <div className="userComment">{comment.content || "No comment available."}</div>
+              <div className={styles.userComment}>{comment.content || "No comment available."}</div>
             </div>
-            <div className="divider"></div>
+            <div className={styles.divider}></div>
           </div>
         );
       })}

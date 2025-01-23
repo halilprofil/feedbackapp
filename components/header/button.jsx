@@ -2,28 +2,27 @@
 
 import { useEffect, useState } from "react";
 import CreateFeedback from "../create/create";
-import { useRouter } from "next/router";
 import Login from "../login/login";
+import styles from "./page.module.css";
 
-export default function AddFeedBackBtn({userId}) {
+export default function AddFeedBackBtn({ userId }) {
   const [show, setShow] = useState(false);
   const [login, setLogin] = useState(false);
 
   useEffect(() => {
-    console.log(login)
-    if(!userId){
+    console.log(login);
+    if (!userId) {
       setLogin(!login);
     }
-  },[show]);  
- 
+  }, [show]);
 
   return (
     <>
-      <button onClick={()=> setShow(!show)} className="add-feedback-btn">
+      <button onClick={() => setShow(!show)} className={styles.add - feedback - btn}>
         + Add Feedback
       </button>
-      <CreateFeedback show={show} setShow={setShow} userId = {userId}/>
-      {!userId && <Login login={login}/>}
+      <CreateFeedback show={show} setShow={setShow} userId={userId} />
+      {!userId && <Login login={login} />}
     </>
   );
 }
