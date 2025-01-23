@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "./Cards.css";
+import styles from "./page.module.css";
 import Likes from "./likes";
 import { getFeedback } from "@/utils/fetch";
 import Link from "next/link";
@@ -10,20 +10,20 @@ export default async function Cards1() {
   const data = response || [];
 
   return (
-    <div className="containerC">
+    <div className={styles.containerC}>
       {data.length > 0 ? (
         data.map((x) => (
           <Link key={x.id} href={`detail/${x.id}`}>
-            <div className="cardsContainer">
-              <div className="leftcontentCard">
+            <div className={styles.cardsContainer}>
+              <div className={styles.leftcontentCard}>
                 <Likes voteCount={x.voteCount} />
-                <div className="content">
-                  <p className="title">{x.title}</p>
-                  <p className="text">{x.description}</p>
-                  <p className="categories">{x.category}</p>
+                <div className={styles.content}>
+                  <p className={styles.title}>{x.title}</p>
+                  <p className={styles.text}>{x.description}</p>
+                  <p className={styles.categories}>{x.category}</p>
                 </div>
               </div>
-              <div className="commentBox">
+              <div className={styles.commentBox}>
                 <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
               </div>
             </div>

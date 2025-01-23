@@ -1,8 +1,7 @@
-import "./Sidebar.css";
+import styles from "./page.module.css";
 import Filter from "./filter";
 import Roadmap from "./Roadmap";
 import { AdvancedFetch } from "@/utils/advancedfetch";
-import Login from "../login/login";
 import Logout from "../login/logout";
 
 export default async function Sidebar({ statusPlanned, statusProgress, statusLive }) {
@@ -10,8 +9,8 @@ export default async function Sidebar({ statusPlanned, statusProgress, statusLiv
 
   return (
     <>
-      <div className="Sidebar">
-        <div className="header">
+      <div className={styles.Sidebar}>
+        <div className={styles.header}>
           <h3>Frontend Mentor</h3>
           <p>Feedback Board</p>
           {response !== null && (

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Cards from "../cards/getCard";
 import AddComment from "./AddComment";
-import "./details.css";
+import styles from "./page.module.css";
 import Edit from "./Edit";
 import Goback from "./Goback";
 import Comments from "./Comments";
@@ -14,39 +14,39 @@ export default async function Details({ id }) {
   const user = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
   let userId;
   let realUserData;
-  if(user.status !== 404){
-    userId = await user.response.id
+  if (user.status !== 404) {
+    userId = await user.response.id;
     const userData = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/User/${userId}`);
-    realUserData = userData.response
+    realUserData = userData.response;
   }
 
-  const allUserData = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/all")
-  const realAllUserData =  allUserData ;
-  console.log(realAllUserData)
- 
+  const allUserData = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/all");
+  const realAllUserData = allUserData;
+  console.log(realAllUserData);
+
   return (
     <>
-      <div className="detailPage">
-        <div className="headerDetail">
+      <div className={styles.detailPage}>
+        <div className={styles.headerDetail}>
           <Goback />
-          <Edit id={id} data={data} userId={userId}/>
+          <Edit id={id} data={data} userId={userId} />
         </div>
-        <div key={data?.id} className="cardsContainer">
-          <div className="leftcontentCard">
+        <div key={data?.id} className={styles.cardsContainer}>
+          <div className={styles.leftcontentCard}>
             <Likes voteCount={data?.voteCount} />
-            <div className="content">
-              <p className="title">{data?.title}</p>
-              <p className="text">{data?.description}</p>
-              <p className="categories">{data?.category}</p>
+            <div className={styles.content}>
+              <p className={styles.title}>{data?.title}</p>
+              <p className={styles.text}>{data?.description}</p>
+              <p className={styles.categories}>{data?.category}</p>
             </div>
           </div>
-          <div className="commentBox">
+          <div className={styles.commentBox}>
             <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
-            <p className="commentCount">{data?.comments.length}</p>
+            <p className={styles.commentCount}>{data?.comments.length}</p>
           </div>
         </div>
-        <Comments realAllUserData={realAllUserData} data={data} userId={userId}/>
-        <AddComment userId={userId} id={id}  />
+        <Comments realAllUserData={realAllUserData} data={data} userId={userId} />
+        <AddComment userId={userId} id={id} />
       </div>
     </>
   );

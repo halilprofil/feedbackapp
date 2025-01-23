@@ -15,6 +15,7 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: #f7f8fd;
   font-family: "Jost", sans-serif;
+  margin-inline: auto;
 }
 /* 5. Improve media defaults */
 img,
@@ -67,7 +68,7 @@ a {
   margin-top: 94px;
   margin-bottom: 130px;
   margin-inline: auto;
-  max-width: 1300px;
+  max-width: 1110px;
 }
 
 .rightContainer {
