@@ -5,11 +5,10 @@ import styles from "./page.module.css";
 
 export default function Comments({ realAllUserData, data }) {
   const usersData = realAllUserData.response;
-
+  console.log(data);
   return (
     <div className={styles.commentBoxes}>
       <p className="commentsCount">{data.comments.length} Comments</p>
-
       {data.comments.map((comment) => {
         // Yorumdaki kullanıcıyı `userId` ile bul
         const user = usersData.find((u) => u.id === comment.userId) || {
@@ -35,6 +34,7 @@ export default function Comments({ realAllUserData, data }) {
                 </div>
                 <button className={styles.replyBtn}>Reply</button>
               </div>
+
               <div className={styles.userComment}>{comment.content || "No comment available."}</div>
             </div>
             <div className={styles.divider}></div>

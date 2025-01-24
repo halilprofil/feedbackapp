@@ -111,6 +111,21 @@
   margin-right: 61px;
 }
 
+.save {
+  background-color: #ad1fea;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 25px;
+  color: #f2f4fe;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20.23px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
 .img1 {
   position: absolute;
   top: -28px;
