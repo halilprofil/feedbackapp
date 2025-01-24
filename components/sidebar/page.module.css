@@ -14,24 +14,22 @@
   border-radius: 10px;
 }
 
-.headerH{
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 28.9px;
-    letter-spacing: -0.25px;
-    color: #ffffff;
-    text-align: left;
+.headerH {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28.9px;
+  letter-spacing: -0.25px;
+  color: #ffffff;
+  text-align: left;
 }
 
-.headerP{
+.headerP {
   font-size: 15px;
   font-weight: 500;
   line-height: 21.68px;
   text-align: left;
   color: #ffffff;
 }
-
-
 
 .filterBox {
   border-radius: 10px;
@@ -42,7 +40,7 @@
   gap: 8px 14px;
 }
 
-.filterBoxButton{
+.filterBoxButton {
   background-color: #f2f4ff;
   max-width: 111px;
   padding-inline: 16px;
@@ -56,11 +54,10 @@
   text-align: left;
 }
 
-.filterBoxButton:hover{
+.filterBoxButton:hover {
   background-color: #4661e6;
   color: #ffffff;
   cursor: pointer;
-
 }
 
 .roadmap {
@@ -73,10 +70,9 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 27px;
-
 }
 
-.roadmapHeaderH{
+.roadmapHeaderH {
   color: #3a4374;
   font-size: 18px;
   font-weight: 700;
@@ -85,7 +81,7 @@
   text-align: left;
 }
 
-.roadmapHeaderButton{
+.roadmapHeaderButton {
   color: #4661e6;
   border: none;
   background-color: #ffffff;
@@ -96,10 +92,6 @@
   text-decoration: underline;
   cursor: pointer;
 }
-
-
-
-
 
 .roadmapCategoriesBox {
   display: flex;

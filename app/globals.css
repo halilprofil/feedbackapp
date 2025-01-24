@@ -62,7 +62,7 @@ a {
   isolation: isolate;
 }
 
-.container {
+/* .container {
   display: flex;
   gap: 30px;
   margin-top: 94px;
@@ -75,4 +75,4 @@ a {
   display: flex;
   flex-direction: column;
   gap: 24px;
-}
+} */

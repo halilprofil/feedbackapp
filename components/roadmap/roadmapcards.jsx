@@ -22,9 +22,9 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
   return (
     <>
       <RoadMapHeader userId={userId} />
-      <div className={styles.roadmap-container}>
+      <div className={styles.roadmapContainer}>
         {/* Planned Column */}
-        <div className={styles.card-colon}>
+        <div className={styles.cardColon}>
           <div className={styles.title}>
             <p>Planned ({statusPlanned.length})</p>
             <span>Ideas prioritized for research</span>
@@ -52,7 +52,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
         </div>
 
         {/* In-Progress Column */}
-        <div className={styles.card-colon}>
+        <div className={styles.cardColon}>
           <div className={styles.title}>
             <p>In-Progress ({statusProgress.length})</p>
             <span>Currently being developed</span>
@@ -80,7 +80,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
         </div>
 
         {/* Live Column */}
-        <div className={styles.card-colon}>
+        <div className={styles.cardColon}>
           <div className={styles.title}>
             <p>Live ({statusLive.length})</p>
             <span>Released features</span>

@@ -18,10 +18,10 @@ export default async function Header() {
   return (
     <>
       <div className={styles.headerContainer}>
-        <div className={styles.hc-right-content}>
-          <div className={styles.hc-right-contentDiv}>
+        <div className={styles.hcRightContent}>
+          <div className={styles.hcRightContentDiv}>
             <Image src="/assets/figure.svg" alt="Figure illustration" width={23} height={24} />
-            <p className={styles.hc-right-contentP}>{data?.length} Suggestion</p>
+            <p className={styles.hcRightContentP}>{data?.length} Suggestion</p>
           </div>
           <Filter />
         </div>

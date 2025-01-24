@@ -1,4 +1,4 @@
-.header-container {
+.headerContainer {
   width: 1046px;
   height: 102px;
   background-color: #373f68;
@@ -11,7 +11,7 @@
   padding-inline: 32px;
 }
 
-.right-content {
+.rightContent {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,10 +22,9 @@
   color: white;
   display: flex;
   gap: 10px;
-
 }
 
-.add-feedback-btn {
+.addFeedbackBtn {
   background-color: #ad1fea;
   border: transparent;
   border-radius: 10px;
@@ -40,8 +39,7 @@
   cursor: pointer;
 }
 
-
-.roadmapH{
+.roadmapH {
   color: white !important;
   font-size: 24px;
   font-weight: 700;
@@ -55,11 +53,11 @@
   color: white;
 }
 
-.gobackP{
+.gobackP {
   color: white;
 }
 
-.roadmap-container {
+.roadmapContainer {
   display: flex;
   width: 1110px;
   margin-inline: auto;
@@ -68,7 +66,7 @@
   justify-content: center;
 }
 
-.card-colon {
+.cardColon {
   display: flex;
   flex-direction: column;
   gap: 24px;

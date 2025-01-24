@@ -1,13 +1,12 @@
 import Image from "next/image";
-import Header from "../header/header";
 import AddFeedBackBtn from "../header/button";
 import styles from "./page.module.css";
 
 export default function Empty() {
   return (
     <>
-      <div className={styles.empty - container}>
-        <div className={styles.empty - context}>
+      <div className={styles.emptyContainer}>
+        <div className={styles.emptyContext}>
           <Image src="/assets/dedective.png" width={130} height={130} alt="dedective"></Image>
           <div className={styles.emptyTexts}>
             <h3 className={styles.emptyH3}>There is no feedback yet.</h3>

@@ -18,7 +18,7 @@ export default function AddFeedBackBtn({ userId }) {
 
   return (
     <>
-      <button onClick={() => setShow(!show)} className={styles.add - feedback - btn}>
+      <button onClick={() => setShow(!show)} className={styles.addFeedbackBtn}>
         + Add Feedback
       </button>
       <CreateFeedback show={show} setShow={setShow} userId={userId} />

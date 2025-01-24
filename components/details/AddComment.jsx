@@ -43,7 +43,8 @@ export default function AddComment({ userId, id }) {
       <form ref={formRef} action={action}>
         <input type="text" hidden name="userId" value={userId} />
         <input type="number" hidden name="postId" value={id} />
-        <textarea className={styles.addCommentTextarea}
+        <textarea
+          className={styles.addCommentTextarea}
           style={{
             border: warning ? "solid" : "initial",
             borderColor: warning ? "red" : "initial",

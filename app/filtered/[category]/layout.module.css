@@ -178,3 +178,102 @@ a.secondary {
   flex-direction: column;
   gap: 24px;
 }
+
+.containerC {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 21px;
+}
+
+.cardsContainer {
+  margin-inline: auto;
+  width: 100%;
+  padding-inline: 32px;
+  padding-block: 28px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.leftcontentCard {
+  display: flex;
+  gap: 40px;
+}
+
+.likes {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-inline: 9px;
+  padding-block: 9px;
+  width: 40px;
+  background-color: #f2f4fe;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  max-height: 53px;
+}
+
+.likes:hover {
+  background-color: #cfd7ff;
+}
+
+.likesSign {
+  color: #4661e6;
+  font-weight: 700;
+}
+.likesCount {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18.79px;
+  color: #3a4374;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26.01px;
+  letter-spacing: -0.25px;
+  color: #3a4374;
+}
+
+.text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.12px;
+  color: #647196;
+}
+
+.categories {
+  color: #4661e6;
+  font-size: 13px;
+  font-weight: 600;
+  padding-inline: 16px;
+  padding-block: 6px;
+  background-color: #f2f4ff;
+  border-radius: 10px;
+  margin-top: 8px;
+  max-width: 111px !important;
+  text-align: center;
+}
+
+.commentBox {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.commentCount {
+  color: #3a4374;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 23.12px;
+  letter-spacing: -0.2222222238779068px;
+}

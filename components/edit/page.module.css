@@ -15,14 +15,13 @@
   gap: 40px;
 }
 
-.formDiv{
+.formDiv {
   display: flex;
-    flex-direction: column;
-    width: 100%;
-
+  flex-direction: column;
+  width: 100%;
 }
 
-.formP{
+.formP {
   margin-bottom: 4px;
   font-size: 14px;
   font-weight: 700;
@@ -64,7 +63,7 @@
   padding-left: 15px;
 }
 
-.formİnput {
+.formInput {
   /* width: 90%; */
   height: 48px;
   border-radius: 5px;
@@ -73,8 +72,6 @@
   color: #3a4374;
   padding-left: 15px;
 }
-
-
 
 .buttons {
   display: flex;

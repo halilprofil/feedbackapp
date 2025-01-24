@@ -5,8 +5,8 @@ import styles from "./page.module.css";
 export default function RoadMapHeader({ userId }) {
   return (
     <>
-      <div className={styles.header-container}>
-        <div className={styles.right-content}>
+      <div className={styles.headerContainer}>
+        <div className={styles.rightContent}>
           <Goback />
           <h3 className={styles.roadmapH}>Roadmap</h3>
         </div>

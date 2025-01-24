@@ -1,6 +1,5 @@
 export const dynamic = "force-dynamic";
 import Image from "next/image";
-import Cards from "../cards/getCard";
 import AddComment from "./AddComment";
 import styles from "./page.module.css";
 import Edit from "./Edit";

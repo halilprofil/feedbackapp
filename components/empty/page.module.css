@@ -1,4 +1,4 @@
-.empty-container {
+.emptyContainer {
   max-width: 825px;
   margin-inline: auto;
   margin-top: 24px;
@@ -7,7 +7,7 @@
   border-radius: 10px;
 }
 
-.empty-context {
+.emptyContext {
   width: 410px;
   margin-inline: auto;
   display: flex;

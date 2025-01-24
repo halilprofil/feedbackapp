@@ -56,7 +56,7 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
           <form className={styles.form} action={action}>
             {" "}
             {/* Save Feedback işlemi */}
-            <input className={styles.formİnput} type="hidden" name="postId" value={id} />
+            <input className={styles.formInput} type="hidden" name="postId" value={id} />
             <h3 className={styles.formH}>Editing ‘Add a dark theme option’</h3>
             <div className={styles.formDiv}>
               <p className={styles.formP}>Feedback Title</p>
