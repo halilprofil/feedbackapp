@@ -81,7 +81,7 @@ export async function EditFeedbacks(prevState, formData) {
     return { status1: "detail alanı zorunludur" };
   }
 
-  const  response = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${postId}`, "PUT", {
+  const response = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${postId}`, "PUT", {
     id: postId,
     title,
     description,
@@ -123,7 +123,6 @@ export async function Addcomments(prevState, formData) {
 
 export async function DeleteFeedbacks(prevState, formData) {
   const postId = formData.postId;
-  const response = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${postId}`, "DELETE");
   console.log(JSON.stringify(response, null, 2));
   if (response.ok) {
     return { success: "feedback başarıyla silindi" };
@@ -347,4 +346,20 @@ export async function signupUser(prevState, formData) {
     console.error(error);
     return { error: "Bir hata oluştu" };
   }
+}
+
+export async function deleteAllCommentsOfOpinion(opinionId) {
+  const { response } = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${opinionId}`);
+  const opinionComments = response.comments;
+  if (!response.comments) {
+    return false;
+  }
+  const commentsIds = opinionComments.map((comment) => comment.id);
+  try {
+    await Promise.all(commentsIds.map((id) => AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Comment/${id}`, "DELETE")));
+  } catch (error) {
+    throw error;
+  }
+  console.log("deleted succesfully all comments");
+  return true;
 }

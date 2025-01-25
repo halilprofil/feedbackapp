@@ -34,7 +34,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
             <Link className={styles.linkcss} key={x.id} href={x.id ? `detail/${x.id}` : "#"}>
               <div className={styles.cards}>
                 <div className={styles.cardsTop}>
-                  <p>Ideas prioritized for research</p>
+                  <p>Planned</p>
                   <h4>{x.title}</h4>
                   <p>{x.description}</p>
                   <p className={styles.categorieBox}>{x.category}</p>
@@ -62,7 +62,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
             <Link className={styles.linkcss} key={x.id} href={x.id ? `detail/${x.id}` : "#"}>
               <div className={styles.cards}>
                 <div className={styles.cardsTop}>
-                  <p>Currently being developed</p>
+                  <p>In-Progress</p>
                   <h4>{x.title}</h4>
                   <p>{x.description}</p>
                   <p className={styles.categorieBox}>{x.category}</p>
@@ -90,7 +90,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
             <Link className={styles.linkcss} key={x.id} href={x.id ? `detail/${x.id}` : "#"}>
               <div className={styles.cards}>
                 <div className={styles.cardsTop}>
-                  <p>Released features</p>
+                  <p>Live</p>
                   <h4>{x.title}</h4>
                   <p>{x.description}</p>
                   <p className={styles.categorieBox}>{x.category}</p>

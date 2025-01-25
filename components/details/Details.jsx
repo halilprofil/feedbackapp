@@ -11,6 +11,7 @@ import Likes from "../cards/likes";
 export default async function Details({ id }) {
   const { response } = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${id}`);
   const data = response;
+  console.log("opinion:", data);
   const user = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
   let userId;
   let realUserData;

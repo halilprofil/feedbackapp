@@ -102,11 +102,13 @@
   display: flex;
   justify-content: space-between;
   margin-top: 16px;
+  align-items: center;
 }
 
 .commentBox {
   display: flex;
   gap: 4px;
+  align-items: center;
 }
 
 .linkcss {
