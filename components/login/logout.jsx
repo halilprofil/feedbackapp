@@ -7,7 +7,7 @@ export default function Logout() {
   return (
     <>
       <form action={logoutUser}>
-        <button>logout</button>
+        <button className={styles.logoutBtn}>logout</button>
       </form>
     </>
   );

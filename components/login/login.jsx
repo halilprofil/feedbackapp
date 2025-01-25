@@ -58,19 +58,19 @@ export default function Login({ login }) {
         {!isSignup && (
           <form action={action} className={styles.loginForm}>
             <label htmlFor="userName">User Name</label>
-            <input id="userName" name="userName" type="text" />
+            <input className={styles.formİnput} id="userName" name="userName" type="text" />
 
             <label htmlFor="email">Email</label>
-            <input id="email" name="email" type="email" />
+            <input className={styles.formİnput} id="email" name="email" type="email" />
 
             <label htmlFor="password">Password</label>
-            <input id="password" name="password" type="password" />
+            <input className={styles.formİnput} id="password" name="password" type="password" />
 
             <button className={styles.loginFormBtn}>Log in</button>
 
             <div className={styles.signUp}>
-              <p>Don&apos;t have an account?</p>
-              <button className="loginFormBtn" type="button" onClick={toggleForm}>
+              <p>Don&apos;t have an account? </p>
+              <button className={styles.statusSelectorButton} type="button" onClick={toggleForm}>
                 Sign up
               </button>
             </div>
@@ -79,36 +79,36 @@ export default function Login({ login }) {
 
         {/* Signup formu */}
         {isSignup && (
-          <form action={signupAction} className={styles.login - form}>
+          <form action={signupAction} className={styles.loginForm}>
             <label htmlFor="firstName">First Name</label>
-            <input id="firstName" name="firstName" type="text" />
+            <input className={styles.formİnput} id="firstName" name="firstName" type="text" />
             {signupState?.firstName?.error && <div className={styles.error}>{signupState.firstName.error}</div>}
 
             <label htmlFor="lastName">Last Name</label>
-            <input id="lastName" name="lastName" type="text" />
+            <input className={styles.formİnput} id="lastName" name="lastName" type="text" />
             {signupState?.lastName?.error && <div className={styles.error}>{signupState.lastName.error}</div>}
 
             <label htmlFor="avatar">Avatar</label>
-            <input id="avatar" name="avatar" type="text" />
+            <input className={styles.formİnput} id="avatar" name="avatar" type="text" />
             {signupState?.avatar?.error && <div className={styles.error}>{signupState.avatar.error}</div>}
 
             <label htmlFor="nickname">Nickname</label>
-            <input id="nickname" name="nickname" type="text" />
+            <input className={styles.formİnput} id="nickname" name="nickname" type="text" />
             {signupState?.nickname?.error && <div className={styles.error}>{signupState.nickname.error}</div>}
 
             <label htmlFor="email">Email</label>
-            <input id="email" name="email" type="email" />
+            <input className={styles.formİnput} id="email" name="email" type="email" />
             {signupState?.email?.error && <div className={styles.error}>{signupState.email.error}</div>}
 
             <label htmlFor="password">Password</label>
-            <input id="password" name="password" type="password" />
+            <input className={styles.formİnput} id="password" name="password" type="password" />
             {signupState?.password?.error && <div className={styles.error}>{signupState.password.error}</div>}
 
-            <button>Sign Up</button>
+            <button className={styles.signupFormBtn}>Sign Up</button>
 
             <div className={styles.signUp}>
               <p>Already have an account?</p>
-              <button className={styles.signUpBtn} type="button" onClick={toggleForm}>
+              <button className={styles.statusSelectorButton} type="button" onClick={toggleForm}>
                 Log in
               </button>
             </div>
