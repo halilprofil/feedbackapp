@@ -126,3 +126,16 @@
   justify-content: center;
   align-items: center;
 }
+
+@media (width < 769px){
+  .Sidebar{
+    flex-direction: row;
+    margin-inline: auto;
+    max-width: 698px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+
+  
+}

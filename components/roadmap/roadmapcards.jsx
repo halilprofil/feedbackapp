@@ -26,17 +26,17 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
         {/* Planned Column */}
         <div className={styles.cardColon}>
           <div className={styles.title}>
-            <p>Planned ({statusPlanned.length})</p>
-            <span>Ideas prioritized for research</span>
+            <p className={styles.colonTitle}>Planned ({statusPlanned.length})</p>
+            <span className={styles.colonSpan}>Ideas prioritized for research</span>
           </div>
 
           {statusPlanned.map((x) => (
             <Link className={styles.linkcss} key={x.id} href={x.id ? `detail/${x.id}` : "#"}>
-              <div className={styles.cards}>
+              <div className={styles.cardsPlanned}>
                 <div className={styles.cardsTop}>
-                  <p>Planned</p>
+                  <p className={styles.colonP}>Planned</p>
                   <h4>{x.title}</h4>
-                  <p>{x.description}</p>
+                  <p className={styles.colonP}>{x.description}</p>
                   <p className={styles.categorieBox}>{x.category}</p>
                 </div>
                 <div className={styles.likesnCommentDiv}>
@@ -54,17 +54,17 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
         {/* In-Progress Column */}
         <div className={styles.cardColon}>
           <div className={styles.title}>
-            <p>In-Progress ({statusProgress.length})</p>
-            <span>Currently being developed</span>
+            <p className={styles.colonTitle}>In-Progress ({statusProgress.length})</p>
+            <span className={styles.colonSpan}>Currently being developed</span>
           </div>
 
           {statusProgress.map((x) => (
             <Link className={styles.linkcss} key={x.id} href={x.id ? `detail/${x.id}` : "#"}>
-              <div className={styles.cards}>
+              <div className={styles.cardsProgress}>
                 <div className={styles.cardsTop}>
-                  <p>In-Progress</p>
+                  <p className={styles.colonP}>In-Progress</p>
                   <h4>{x.title}</h4>
-                  <p>{x.description}</p>
+                  <p className={styles.colonP}>{x.description}</p>
                   <p className={styles.categorieBox}>{x.category}</p>
                 </div>
                 <div className={styles.likesnCommentDiv}>
@@ -82,17 +82,17 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
         {/* Live Column */}
         <div className={styles.cardColon}>
           <div className={styles.title}>
-            <p>Live ({statusLive.length})</p>
-            <span>Released features</span>
+            <p className={styles.colonTitle}>Live ({statusLive.length})</p>
+            <span className={styles.colonSpan}>Released features</span>
           </div>
 
           {statusLive.map((x) => (
             <Link className={styles.linkcss} key={x.id} href={x.id ? `detail/${x.id}` : "#"}>
-              <div className={styles.cards}>
+              <div className={styles.cardsLive}>
                 <div className={styles.cardsTop}>
-                  <p>Live</p>
+                  <p className={styles.colonP}>Live</p>
                   <h4>{x.title}</h4>
-                  <p>{x.description}</p>
+                  <p className={styles.colonP} >{x.description}</p>
                   <p className={styles.categorieBox}>{x.category}</p>
                 </div>
                 <div className={styles.likesnCommentDiv}>

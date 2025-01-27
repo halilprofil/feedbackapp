@@ -28,10 +28,9 @@ export default function CreateFeedback({ show, setShow, userId }) {
     <>
       {userId && (
         <dialog className={styles.dialog} ref={dialogRef} open={show}>
-          <form action={action} className={styles.createFor}>
+          <form action={action} className={styles.createForm}>
             <h3 className={styles.createHeader}>Create New Feedback</h3>
-            <div className={styles.dialogDiv}>
-              <h4 className={styles.createTitle}>Create New Feedback</h4>
+            <div className={styles.dialogDivContainer}>
               <div className={styles.dialogDiv}>
                 <p className={styles.p}>Feedback Title</p>
                 <label className={styles.label} htmlFor="createTitle1">
@@ -68,7 +67,7 @@ export default function CreateFeedback({ show, setShow, userId }) {
                 <button type="button" className={styles.cancel} onClick={() => setShow(false)}>
                   Cancel
                 </button>
-                <button type="submit" className={styles.KaydetBtn}>
+                <button type="submit" className={styles.saveBtn}>
                   Add Feedback
                 </button>
               </div>

@@ -132,7 +132,7 @@
 .goback {
   display: flex;
   gap: 16px;
-  color: #647196;
+  color: #4661E6 !important;
   align-items: center;
   border: none;
   background: none;
@@ -300,5 +300,31 @@
 
 .warning {
   color: red !important;
+}
+
+@media(width < 769px){
+  .detailPage{
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .headerDetail{
+    width: 100%;
+    margin-inline: auto;
+    margin-top: 0px;
+  }
+
+  .commentBoxes{
+    width: 100%;
+  }
+
+  .addComment{
+    width: 100% !important;
+    margin-bottom: 0px;
+  }
+
 }
 
