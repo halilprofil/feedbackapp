@@ -50,11 +50,11 @@
 }
 
 .goback {
-  color: white;
+  color: white !important;
 }
 
-.gobackP {
-  color: white;
+.gobackH {
+  color: white !important;
 }
 
 .roadmapContainer {
@@ -72,18 +72,85 @@
   gap: 24px;
 }
 
-.cards {
+.cardsProgress {
   width: 330px;
   background-color: #fff;
   padding-inline: 32px;
   padding-bottom: 32px;
   padding-top: 25px;
   border-radius: 10px;
-  height: 272px;
+  min-height: 260px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
+
+.cardsPlanned {
+  width: 330px;
+  background-color: #fff;
+  padding-inline: 32px;
+  padding-bottom: 32px;
+  padding-top: 25px;
+  border-radius: 10px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.cardsLive {
+  width: 330px;
+  background-color: #fff;
+  padding-inline: 32px;
+  padding-bottom: 32px;
+  padding-top: 25px;
+  border-radius: 10px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.cardsProgress  ::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px; /* Şeridin yüksekliği */
+  background-color: #ad1fea; /* Şeridin rengi */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; /* Kartın üst kısmına uyumlu şerit */
+}
+
+.cardsPlanned::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px; /* Şeridin yüksekliği */
+  background-color:#F49F85; /* Şeridin rengi */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; /* Kartın üst kısmına uyumlu şerit */
+}
+
+.cardsLive::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px; /* Şeridin yüksekliği */
+  background-color:#62BCFA; /* Şeridin rengi */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; /* Kartın üst kısmına uyumlu şerit */
+}
+
+
 
 .categorieBox {
   background-color: #f2f4ff;
@@ -113,4 +180,89 @@
 
 .linkcss {
   width: 100%;
+}
+
+.colonTitle{
+color: #3A4374;
+font-size: 18px;
+font-weight: 700;
+line-height: 26.01px;
+letter-spacing: -0.25px;
+text-align: left;
+text-decoration-skip-ink: none;
+  }
+
+.colonSpan{
+    color: #647196;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23.12px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+}
+
+.colonP{
+  color: #647196;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.79px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+  }
+
+
+
+
+
+@media(width < 769px){
+  .colonTitle{
+    color: #3A4374;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20.23px;
+    letter-spacing: -0.1944444477558136px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    }
+    
+    .colonSpan{
+    color: #647196;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20.23px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    }
+    
+    .colonP{
+    color: #647196;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18.79px;
+    text-align: left;
+    text-decoration-skip-ink: none;
+    }
+
+    .headerContainer{
+      max-width: 689px;
+    }
+
+    .roadmapContainer{
+      max-width: 680px;
+      gap: 10px;
+    }
+
+    .cardsPlanned{
+      max-width: 223px;
+    }
+
+    .cardsProgress{
+      max-width: 223px;
+    }
+
+    .cardsLive{
+      max-width: 223px;
+    }
+
+
 }

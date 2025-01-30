@@ -35,6 +35,10 @@
   max-height: 53px;
 }
 
+.likes:hover{
+  background-color: #CFD7FF;
+}
+
 .likes:hover {
   background-color: #cfd7ff;
 }
@@ -95,4 +99,12 @@
   font-weight: 700;
   line-height: 23.12px;
   letter-spacing: -0.2222222238779068px;
+}
+
+
+
+@media(width < 769px){
+  .cardsContainer{
+    max-width: 689px !important;
+  }
 }

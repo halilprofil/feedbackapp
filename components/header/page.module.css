@@ -93,3 +93,9 @@
   text-align: left;
   cursor: pointer;
 }
+
+@media(width < 769px){
+  .headerContainer{
+    max-width: 689px;
+  }
+}

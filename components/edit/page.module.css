@@ -63,7 +63,7 @@
   padding-left: 15px;
 }
 
-.formInput {
+.formİnput{
   /* width: 90%; */
   height: 48px;
   border-radius: 5px;
@@ -71,6 +71,8 @@
   background-color: #f7f8fd;
   color: #3a4374;
   padding-left: 15px;
+  border-radius: 5px;
+  border: transparent !important;
 }
 
 .buttons {
@@ -151,4 +153,11 @@
   line-height: 34.68px;
   letter-spacing: -0.3333333432674408px;
   text-align: left;
+}
+
+@media(width < 769px){
+  .dialog{
+    max-width: 540px;
+  }
+
 }

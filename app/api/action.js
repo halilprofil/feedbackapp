@@ -351,7 +351,7 @@ export async function deleteAllCommentsOfOpinion(opinionId) {
   const { response } = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${opinionId}`);
   const opinionComments = response.comments;
   if (!response.comments) {
-    return false;
+    return { status : "Opinion has not any comments"};
   }
   const commentsIds = opinionComments.map((comment) => comment.id);
   try {
@@ -359,6 +359,6 @@ export async function deleteAllCommentsOfOpinion(opinionId) {
   } catch (error) {
     throw error;
   }
-  console.log("deleted succesfully all comments");
-  return true;
+  console.log("Comments deleted before deleting the opinion");
+  return { status: "deleted succesfully all comments"};
 }
