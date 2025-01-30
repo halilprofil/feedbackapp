@@ -129,7 +129,6 @@ export async function DeleteFeedbacks(prevState, formData) {
   }
 
   if (!response.ok) {
-    console.log(response);
     return { error: "feedback silinirken bir hata oluştu." };
   }
   revalidatePath("/");
@@ -197,7 +196,7 @@ export async function loginUser(prevState, formData) {
     }
 
     // Başarı durumunu döndür
-    console.log("Giriş işlemi başarılı!");
+
     return { success: "Giriş başarılı!" };
   } catch (error) {
     console.error("Beklenmedik bir hata oluştu:", error);

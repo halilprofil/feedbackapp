@@ -33,8 +33,6 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
         credentials: "include",
       });
 
-      console.log(response);
-
       if (response.ok) {
         toast.success("Feedback deleted successfully!");
         setShow(false);

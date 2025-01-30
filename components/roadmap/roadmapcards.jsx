@@ -40,7 +40,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
                   <p className={styles.categorieBox}>{x.category}</p>
                 </div>
                 <div className={styles.likesnCommentDiv}>
-                  <Likes />
+                  <Likes voteCount={x.voteCount} />
                   <div className={styles.commentBox}>
                     <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
                     <p className={styles.commentCount}>{x.comment || 0}</p>
@@ -68,7 +68,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
                   <p className={styles.categorieBox}>{x.category}</p>
                 </div>
                 <div className={styles.likesnCommentDiv}>
-                  <Likes />
+                  <Likes voteCount={x.voteCount} />
                   <div className={styles.commentBox}>
                     <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
                     <p className={styles.commentCount}>{x.comment || 0}</p>
@@ -96,7 +96,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
                   <p className={styles.categorieBox}>{x.category}</p>
                 </div>
                 <div className={styles.likesnCommentDiv}>
-                  <Likes />
+                  <Likes voteCount={x.voteCount} />
                   <div className={styles.commentBox}>
                     <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
                     <p className={styles.commentCount}>{x.comment || 0}</p>
