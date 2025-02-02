@@ -277,3 +277,16 @@ a.secondary {
   line-height: 23.12px;
   letter-spacing: -0.2222222238779068px;
 }
+@media (width < 769px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+@media (width <= 390px) {
+  .container {
+    flex-direction: column;
+    margin: 0px;
+    gap: 0px;
+  }
+}

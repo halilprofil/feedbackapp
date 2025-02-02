@@ -55,8 +55,10 @@
 }
 
 .filterBoxButton:hover {
-  background-color: #4661e6;
-  color: #ffffff;
+  /* background-color: #4661e6; */
+  background-color: #cfd7ff;
+  color: #4661e6;
+  /* color: #ffffff; */
   cursor: pointer;
 }
 
@@ -126,9 +128,14 @@
   justify-content: center;
   align-items: center;
 }
-
-@media (width < 769px){
-  .Sidebar{
+.miniSidebar {
+  display: none;
+}
+.toggleButton {
+  display: none;
+}
+@media (width < 769px) {
+  .Sidebar {
     flex-direction: row;
     margin-inline: auto;
     max-width: 698px;
@@ -136,6 +143,83 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
   }
+}
+@media (width <= 390px) {
+  .Sidebar {
+    width: 100%;
+    display: block;
+  }
+  .miniRoadMap {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+  }
+  .miniFilter {
+    border-radius: 10px;
+    padding: 24px;
+    background-color: #ffffff;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 14px;
+  }
+  .header {
+    padding: 12px;
+    border-radius: 0px;
+  }
+  .filterBox {
+    display: none;
+  }
+  .roadmap {
+    display: none;
+  }
+  .miniSidebar {
+    position: fixed;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    width: 250px; /* Sidebar genişliği */
+    height: 100%;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.5);
+    transform: translateX(100%); /* Başlangıçta gizli */
+    transition: transform 0.3s ease-in-out;
+    background-color: #f7f8fd;
+  }
+  .miniSidebarInner {
+    display: flex;
+    margin-top: 60px;
+    flex-direction: column;
+    gap: 50px;
+    padding-inline: 20px;
+    padding-block: 20px;
+  }
+  .miniSidebar.open {
+    transform: translateX(0); /* Açıldığında görünür */
+    display: block;
+  }
 
-  
+  .toggleButton {
+    position: fixed;
+    display: block;
+    top: 10px;
+    right: 10px;
+    background-color: blue;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
 }

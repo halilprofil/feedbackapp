@@ -5,7 +5,8 @@
   border: transparent;
   box-sizing: border-box; /* Taşmaları önlemek için */
   max-width: 100%; /* Ekran boyutunu aşmasın */
-  width: 90%; /* Genel bir genişlik ayarı */
+  /* Genel bir genişlik ayarı */
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 .createForm {
   padding-left: 42px;
@@ -166,16 +167,14 @@
   line-height: 20.23px;
 }
 
-.dialogDivContainer{
+.dialogDivContainer {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-
-@media(width < 769px){
-  .dialog{
+@media (width < 769px) {
+  .dialog {
     max-width: 540px;
   }
-
 }

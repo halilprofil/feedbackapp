@@ -178,9 +178,33 @@ a.secondary {
   flex-direction: column;
   gap: 24px;
 }
-
-@media (width < 769px){
-  .container{
+.miniContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-top: 94px;
+  margin-bottom: 130px;
+  margin-inline: auto;
+  max-width: 1110px;
+}
+@media (width < 769px) {
+  .container {
     flex-direction: column;
+  }
+  .miniContainer {
+    flex-direction: column;
+    margin: 0px;
+  }
+}
+@media (width <= 390px) {
+  .container {
+    flex-direction: row;
+    gap: 0px;
+    margin-top: 0px;
+  }
+  .miniContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
   }
 }

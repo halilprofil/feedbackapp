@@ -1,5 +1,5 @@
 .headerContainer {
-  width: 1046px;
+  width: 1080px;
   height: 102px;
   background-color: #373f68;
   display: flex;
@@ -64,6 +64,7 @@
   margin-top: 48px;
   gap: 30px;
   justify-content: center;
+  margin-bottom: 80px;
 }
 
 .cardColon {
@@ -114,8 +115,8 @@
   position: relative;
 }
 
-.cardsProgress  ::before {
-  content: '';
+.cardsProgress ::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -127,30 +128,28 @@
 }
 
 .cardsPlanned::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 8px; /* Şeridin yüksekliği */
-  background-color:#F49F85; /* Şeridin rengi */
+  background-color: #f49f85; /* Şeridin rengi */
   border-top-left-radius: 8px;
   border-top-right-radius: 8px; /* Kartın üst kısmına uyumlu şerit */
 }
 
 .cardsLive::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 8px; /* Şeridin yüksekliği */
-  background-color:#62BCFA; /* Şeridin rengi */
+  background-color: #62bcfa; /* Şeridin rengi */
   border-top-left-radius: 8px;
   border-top-right-radius: 8px; /* Kartın üst kısmına uyumlu şerit */
 }
-
-
 
 .categorieBox {
   background-color: #f2f4ff;
@@ -182,87 +181,81 @@
   width: 100%;
 }
 
-.colonTitle{
-color: #3A4374;
-font-size: 18px;
-font-weight: 700;
-line-height: 26.01px;
-letter-spacing: -0.25px;
-text-align: left;
-text-decoration-skip-ink: none;
-  }
-
-.colonSpan{
-    color: #647196;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 23.12px;
-    text-align: left;
-    text-decoration-skip-ink: none;
+.colonTitle {
+  color: #3a4374;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26.01px;
+  letter-spacing: -0.25px;
+  text-align: left;
+  text-decoration-skip-ink: none;
 }
 
-.colonP{
+.colonSpan {
+  color: #647196;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23.12px;
+  text-align: left;
+  text-decoration-skip-ink: none;
+}
+
+.colonP {
   color: #647196;
   font-size: 16px;
   font-weight: 400;
   line-height: 23.79px;
   text-align: left;
   text-decoration-skip-ink: none;
-  }
+}
 
-
-
-
-
-@media(width < 769px){
-  .colonTitle{
-    color: #3A4374;
+@media (width < 769px) {
+  .colonTitle {
+    color: #3a4374;
     font-size: 14px;
     font-weight: 700;
     line-height: 20.23px;
     letter-spacing: -0.1944444477558136px;
     text-align: left;
     text-decoration-skip-ink: none;
-    }
-    
-    .colonSpan{
+  }
+
+  .colonSpan {
     color: #647196;
     font-size: 14px;
     font-weight: 400;
     line-height: 20.23px;
     text-align: left;
     text-decoration-skip-ink: none;
-    }
-    
-    .colonP{
+  }
+
+  .colonP {
     color: #647196;
     font-size: 13px;
     font-weight: 400;
     line-height: 18.79px;
     text-align: left;
     text-decoration-skip-ink: none;
-    }
+  }
 
-    .headerContainer{
-      max-width: 689px;
-    }
+  .headerContainer {
+    max-width: 689px;
+  }
 
-    .roadmapContainer{
-      max-width: 680px;
-      gap: 10px;
-    }
+  .roadmapContainer {
+    max-width: 680px;
+    gap: 10px;
+  }
 
-    .cardsPlanned{
-      max-width: 223px;
-    }
+  .cardsPlanned {
+    max-width: 223px;
+  }
 
-    .cardsProgress{
-      max-width: 223px;
-    }
+  .cardsProgress {
+    max-width: 223px;
+  }
 
-    .cardsLive{
-      max-width: 223px;
-    }
-
-
+  .cardsLive {
+    max-width: 223px;
+  }
 }

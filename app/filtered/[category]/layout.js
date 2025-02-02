@@ -3,6 +3,7 @@ import Header from "@/components/header/header";
 import Sidebar from "@/components/sidebar/Sidebar";
 import { AdvancedFetch } from "@/utils/advancedfetch";
 import styles from "./layout.module.css";
+import MiniSidebar from "@/components/sidebar/MiniSidebar";
 
 export default async function Layout({ children }) {
   const { response: opinions } = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
@@ -19,6 +20,7 @@ export default async function Layout({ children }) {
           <Header />
           <main>{children}</main>
         </div>
+        <MiniSidebar statusPlanned={statusPlanned} statusProgress={statusProgress} statusLive={statusLive} />
       </div>
     </>
   );
