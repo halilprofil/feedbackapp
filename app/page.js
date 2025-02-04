@@ -18,8 +18,8 @@ export default async function Home() {
       <div className={styles.container}>
         <Sidebar statusPlanned={statusPlanned} statusProgress={statusProgress} statusLive={statusLive} />
         <div className={styles.rightContainer}>
-          <Header />
-          <Cards />
+          <Header/>
+          <Cards/>
         </div>
       </div>
     </>

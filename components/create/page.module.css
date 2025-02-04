@@ -4,8 +4,6 @@
   border-radius: 10px;
   border: transparent;
   box-sizing: border-box; /* Taşmaları önlemek için */
-  max-width: 100%; /* Ekran boyutunu aşmasın */
-  width: 90%; /* Genel bir genişlik ayarı */
 }
 .createForm {
   padding-left: 42px;
