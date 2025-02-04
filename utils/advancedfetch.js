@@ -22,8 +22,6 @@ export async function AdvancedFetch(url, method = "GET", data = null, cacheContr
       credentials: "include",
     });
 
-    console.log(response);
-
     if (!response.ok) {
       return { response: null, status: response.status, error: response.statusText };
     }

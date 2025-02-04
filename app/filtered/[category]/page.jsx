@@ -7,10 +7,10 @@ import styles from "./layout.module.css";
 
 export default async function Filtered({ params }) {
   const { category } = params;
-  console.log(category);
+
   const { response } = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
   const data = (await response) || [];
-  console.log(data);
+
   const filteredData = data?.filter((x) => x.category === category);
   return (
     <>

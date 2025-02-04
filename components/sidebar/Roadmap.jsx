@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 
-export default function Roadmap({ statusPlanned, statusProgress, statusLive }) {
+export default function Roadmap({ statusPlanned, statusProgress, statusLive, usage }) {
   return (
-    <div className={styles.roadmap}>
+    <div className={usage === "sidebar" ? styles.miniRoadMap : styles.roadmap}>
       <div className={styles.roadmapHeader}>
         <h1 className={styles.roadmapHeaderH}>Roadmap</h1>
         <Link href={"/roadmap"}>

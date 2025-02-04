@@ -12,7 +12,9 @@
   padding-top: 52px;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
 
 .formDiv {
@@ -63,7 +65,7 @@
   padding-left: 15px;
 }
 
-.formİnput{
+.formİnput {
   /* width: 90%; */
   height: 48px;
   border-radius: 5px;
@@ -78,7 +80,7 @@
 .buttons {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 10px;
 }
 
@@ -130,13 +132,13 @@
 }
 .img1 {
   position: absolute;
-  top: -28px;
+  top: -15px;
   left: 31px;
 }
 
 .img2 {
   position: absolute;
-  top: -8px;
+  top: 2px;
   left: 52px;
 }
 
@@ -155,9 +157,8 @@
   text-align: left;
 }
 
-@media(width < 769px){
-  .dialog{
+@media (width < 769px) {
+  .dialog {
     max-width: 540px;
   }
-
 }

@@ -5,6 +5,7 @@ import Cards from "@/components/cards/getCard";
 import Sidebar from "@/components/sidebar/Sidebar";
 
 import { AdvancedFetch } from "@/utils/advancedfetch";
+import MiniSidebar from "@/components/sidebar/MiniSidebar";
 
 export default async function Home() {
   const { response } = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/Opinions");
@@ -16,11 +17,15 @@ export default async function Home() {
   return (
     <>
       <div className={styles.container}>
-        <Sidebar statusPlanned={statusPlanned} statusProgress={statusProgress} statusLive={statusLive} />
-        <div className={styles.rightContainer}>
-          <Header/>
-          <Cards/>
+        <div className={styles.miniContainer}>
+          <Sidebar statusPlanned={statusPlanned} statusProgress={statusProgress} statusLive={statusLive} />
+          <div className={styles.rightContainer}>
+            <Header />
+            <Cards />
+          </div>
         </div>
+
+        <MiniSidebar statusPlanned={statusPlanned} statusProgress={statusProgress} statusLive={statusLive} />
       </div>
     </>
   );

@@ -94,8 +94,23 @@
   cursor: pointer;
 }
 
-@media(width < 769px){
-  .headerContainer{
+@media (width < 769px) {
+  .headerContainer {
     max-width: 689px;
+  }
+}
+@media (width <= 390px) {
+  .headerContainer {
+    width: 100%;
+    border-radius: 0px;
+  }
+  .filterFormSelect {
+    width: 100%;
+  }
+  .filterFormLabel {
+    display: none;
+  }
+  .hcRightContentDiv {
+    display: none;
   }
 }

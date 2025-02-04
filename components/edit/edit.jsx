@@ -20,12 +20,12 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
       console.log("Delete URL:", `${localUrl}/api/Opinions/${id}`);
 
       // Yorumları siliyoruz ki backend yorumlu opinionda hata vermesin
-     const deleteResponse = await deleteAllCommentsOfOpinion(id);
-     
+      const deleteResponse = await deleteAllCommentsOfOpinion(id);
+
       console.log("Comments deleted before deleting the opinion");
 
       // Görüşü (opinion) sil
-      if(deleteResponse.status){
+      if (deleteResponse.status) {
         const response = await fetch(`${localUrl}/api/Opinions/${id}`, {
           method: "DELETE",
           headers: {
@@ -34,9 +34,9 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
           },
           credentials: "include",
         });
-  
+
         console.log(response);
-  
+
         if (response.ok) {
           toast.success("Feedback deleted successfully!");
           setShow(false);
@@ -44,9 +44,7 @@ export default function EditFeedback({ id, data, show, setShow, userId, login })
         } else {
           toast.error("Failed to delete feedback.");
         }
-        
       }
-     
     } catch (error) {
       console.log(error);
       toast.error("An error occurred while deleting feedback.");
