@@ -3,6 +3,7 @@ import { useState } from "react";
 import styles from "./page.module.css";
 import Filter from "./filter";
 import Roadmap from "./Roadmap";
+import Image from "next/image";
 
 export default function MiniSidebar({ statusPlanned, statusProgress, statusLive }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,7 @@ export default function MiniSidebar({ statusPlanned, statusProgress, statusLive 
       {/* Açma Butonu */}
       {!isOpen && (
         <button onClick={() => setIsOpen(true)} className={styles.toggleButton}>
-          Aç
+          <Image width={18} height={18} src="/assets/hamburger.svg" alt="hamburger"/>
         </button>
       )}
 

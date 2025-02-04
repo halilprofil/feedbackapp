@@ -85,3 +85,13 @@
   margin-right: 61px;
   align-self: center;
 }
+
+@media(width < 391px ){
+ .modal{
+  min-width: 300px;
+ }
+ .modalH2{
+  margin-bottom: 20px;
+ }
+
+}

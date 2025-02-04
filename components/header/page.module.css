@@ -46,11 +46,13 @@
   width: 150px;
   padding: 10px 15px;
   outline: none;
+  border: transparent;
 }
 .filterFormLabel {
   display: flex;
   align-items: center;
   width: 70px;
+  color: #f2f4fe;
 }
 
 .selectBox {
