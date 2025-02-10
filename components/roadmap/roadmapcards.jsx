@@ -11,9 +11,9 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
   const user = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
 
   let userId;
-  // if (user && user.status !== 404) {
-  //   userId = user?.response?.id;
-  // }
+  if (user && user.status !== 404) {
+    userId = user?.response?.id;
+  }
 
   // Eğer herhangi bir durum verisi yoksa, yükleme mesajı göster
   if (!statusPlanned || !statusProgress || !statusLive) {
