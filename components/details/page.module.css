@@ -328,3 +328,10 @@
 
 }
 
+@media( width < 391px){
+ .addCommentFooter{
+  flex-direction: column;
+  gap: 25px;
+ }
+}
+

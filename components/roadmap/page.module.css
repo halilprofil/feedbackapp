@@ -208,6 +208,7 @@
   text-align: left;
   text-decoration-skip-ink: none;
 }
+.miniRoadmapContainer{display: none;}
 
 @media (width < 769px) {
   .colonTitle {
@@ -257,5 +258,65 @@
 
   .cardsLive {
     max-width: 223px;
+  }
+}
+
+@media ( width < 391px){
+  .headerContainer{
+    max-width: 375px;
+    padding-inline: 10px;
+  }
+  .roadmapContainer{
+    max-width:350px;
+    display: flex;
+    flex-direction: column;
+    display: none;
+  }
+  .cardColon{
+    margin-inline: auto;
+  }
+
+  .cardsPlanned{
+    max-width: 325px;
+  }
+  .cardsProgress{
+    max-width: 325px;
+  }
+  .cardsLive{
+    max-width: 325px;
+  }
+
+  .miniRoadmapColon{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-inline: auto;
+  }
+
+  .miniRoadmapContainer{
+    margin-inline: auto;
+    max-width: 327px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .miniRoadmapButtons{
+    display: flex;
+    max-width: 327px;
+    justify-content: space-between;
+  }
+  .miniRoadmapButtons{
+    margin-top: 30px;
+  }
+  .miniRoadmapButton{
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18.79px;
+    letter-spacing: -0.1805555522441864px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    border: transparent;
+    text-decoration: underline;
   }
 }

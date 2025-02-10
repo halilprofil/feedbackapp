@@ -1,38 +1,29 @@
-export const dynamic = "force-dynamic";
-import Image from "next/image";
-import Likes from "../cards/likes";
-import RoadMapHeader from "./header";
-import Link from "next/link";
+"use client";
+import { useEffect, useState } from "react";
 import styles from "./page.module.css";
-import { AdvancedFetch } from "@/utils/advancedfetch";
-import MiniRoadMap from "./MiniRoadMap";
+import Link from "next/link";
+import Likes from "../cards/likes";
+import Image from "next/image";
 
-export default async function RoadMapsCards({ statusPlanned, statusProgress, statusLive }) {
-  const user = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
+export default function MiniRoadMap({ statusPlanned, statusProgress, statusLive }) {
+  const [cards, setCards] = useState(statusPlanned);
 
-  let userId;
-  // if (user && user.status !== 404) {
-  //   userId = user?.response?.id;
-  // }
-
-  // Eğer herhangi bir durum verisi yoksa, yükleme mesajı göster
-  if (!statusPlanned || !statusProgress || !statusLive) {
-    return <p>Data is loading or unavailable.</p>;
-  }
+  useEffect(() => {
+    console.log(cards==statusPlanned);
+    console.log('useEffect');
+  }, [cards]);
 
   return (
-    <>
-      <RoadMapHeader userId={userId} />
-      <MiniRoadMap statusPlanned={statusPlanned} statusLive={statusLive} statusProgress={statusProgress}/>
-      <div className={styles.roadmapContainer}>
-        {/* Planned Column */}
-        <div className={styles.cardColon}>
-          <div className={styles.title}>
-            <p className={styles.colonTitle}>Planned ({statusPlanned.length})</p>
-            <span className={styles.colonSpan}>Ideas prioritized for research</span>
-          </div>
+    <div className={styles.miniRoadmapContainer}>
+      <div className={styles.miniRoadmapButtons}>
+        <button className={styles.miniRoadmapButton} style={{ color: cards == statusPlanned ? "#3A4374" : "gray" }} onClick={() => setCards(statusPlanned)}>Planned ({statusPlanned.length})</button>
+        <button className={styles.miniRoadmapButton} style={{ color: cards == statusProgress ? "#3A4374" : "gray" }} onClick={() => setCards(statusProgress)}>In-Progress ({statusProgress.length})</button>
+        <button className={styles.miniRoadmapButton} style={{ color: cards == statusLive ? "#3A4374" : "gray" }} onClick={() => setCards(statusLive)}>Live ({statusLive.length})</button>
+      </div>
 
-          {statusPlanned.map((x) => (
+      <div className={styles.miniRoadmapColon}>
+        {cards == statusPlanned && 
+              cards.map((x) => 
             <Link className={styles.linkcss} key={x.id} href={x.id ? `detail/${x.id}` : "#"}>
               <div className={styles.cardsPlanned}>
                 <div className={styles.cardsTop}>
@@ -50,18 +41,11 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
                 </div>
               </div>
             </Link>
-          ))}
-        </div>
+              )}
 
-        {/* In-Progress Column */}
-        <div className={styles.cardColon}>
-          <div className={styles.title}>
-            <p className={styles.colonTitle}>In-Progress ({statusProgress.length})</p>
-            <span className={styles.colonSpan}>Currently being developed</span>
-          </div>
-
-          {statusProgress.map((x) => (
-            <Link className={styles.linkcss} key={x.id} href={x.id ? `detail/${x.id}` : "#"}>
+            {cards == statusProgress && 
+              cards.map((x) =>  
+              <Link className={styles.linkcss} key={x.id} href={x.id ? `detail/${x.id}` : "#"}>
               <div className={styles.cardsProgress}>
                 <div className={styles.cardsTop}>
                   <p className={styles.colonP}>In-Progress</p>
@@ -78,18 +62,11 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
                 </div>
               </div>
             </Link>
-          ))}
-        </div>
+             )}
 
-        {/* Live Column */}
-        <div className={styles.cardColon}>
-          <div className={styles.title}>
-            <p className={styles.colonTitle}>Live ({statusLive.length})</p>
-            <span className={styles.colonSpan}>Released features</span>
-          </div>
-
-          {statusLive.map((x) => (
-            <Link className={styles.linkcss} key={x.id} href={x.id ? `detail/${x.id}` : "#"}>
+            {cards == statusLive && 
+              cards.map((x) => 
+                <Link className={styles.linkcss} key={x.id} href={x.id ? `detail/${x.id}` : "#"}>
               <div className={styles.cardsLive}>
                 <div className={styles.cardsTop}>
                   <p className={styles.colonP}>Live</p>
@@ -106,9 +83,13 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
                 </div>
               </div>
             </Link>
-          ))}
-        </div>
+             )}
+        
+        
+        
+
+        
       </div>
-    </>
+    </div>
   );
 }

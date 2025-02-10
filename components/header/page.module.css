@@ -115,4 +115,7 @@
   .hcRightContentDiv {
     display: none;
   }
+  .addFeedbackBtn{
+    padding: 10px 15px;
+  }
 }
