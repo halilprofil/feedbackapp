@@ -9,6 +9,7 @@
   margin-inline: auto;
   border-radius: 10px;
   padding-inline: 32px;
+  margin-top: 60px;
 }
 
 .rightContent {
@@ -265,7 +266,9 @@
   .headerContainer{
     max-width: 375px;
     padding-inline: 10px;
+    margin-top: 0px;
   }
+
   .roadmapContainer{
     max-width:350px;
     display: flex;

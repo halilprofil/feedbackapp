@@ -167,7 +167,7 @@ a.secondary {
 .container {
   display: flex;
   gap: 30px;
-  margin-top: 94px;
+  margin-top: 0px;
   margin-bottom: 130px;
   margin-inline: auto;
   max-width: 1110px;
