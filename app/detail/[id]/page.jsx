@@ -9,6 +9,7 @@ export default async function detail({ params }) {
   const { response } = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
   return (
     <>
+    
       <Details id={id} />
     </>
   );
