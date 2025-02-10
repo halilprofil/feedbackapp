@@ -251,35 +251,15 @@ export async function signupUser(prevState, formData) {
   const password = formData.get("password");
 
   // Eğer gerekli alanlar boşsa, hata mesajı döndür
-  if (!firstName) {
-    return { error: "First Name alanı boş olamaz" };
-  }
-
-  if (!lastName) {
-    return { error: "Last Name alanı boş olamaz" };
-  }
-
-  if (!avatar) {
-    return { error: "Avatar alanı boş olamaz" };
-  }
-
-  if (!nickname) {
-    return { error: "Nickname alanı boş olamaz" };
-  }
-
-  if (!email) {
-    return { error: "Email alanı boş olamaz" };
-  }
-
-  if (!password) {
-    return { error: "Şifre alanı boş olamaz" };
+  if (!firstName || !lastName || !avatar || !nickname || !email || !password) {
+    return { error: "Tüm alanları doldurun" };
   }
 
   try {
     const response = await fetch("https://feedback.nazlisunay.com.tr/api/User/register", {
       method: "POST",
       headers: {
-        "Content-type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         firstName,
@@ -292,60 +272,39 @@ export async function signupUser(prevState, formData) {
       credentials: "include",
     });
 
-    const { body } = await response.json();
+    // JSON olarak parse edilebilir mi kontrol et
+    let responseData;
+    const textData = await response.text(); // Önce yanıtı düz metin olarak oku
 
-    if (!response.ok) {
-      if (response.status === 400) {
-        switch (body.code) {
-          case "PasswordRequiresNonAlphanumeric":
-            return { error: "şifreniz harf içermelidir" };
-
-          case "PasswordRequiresDigit": {
-            return { error: "şifreniz numara içermelidir" };
-          }
-
-          case "PasswordRequiresUpper":
-            return { error: "şifreniz Büyük ve Küçük harf içermelidir" };
-
-          case "PasswordRequiresLower":
-            return { error: "şifreniz Büyük ve Küçük harf içermelidir" };
-
-          case "DuplicateUserName":
-            return { error: "Kullanıcı adı veya şifre yanlış." };
-
-          case "PasswordTooShort":
-            return { error: "şifreniz çok kısa" };
-
-          default:
-            break;
-        }
-      }
-      return {
-        error: "Kayıt işlemi sırasında bir hata  oluştu.",
-      };
+    try {
+      responseData = textData ? JSON.parse(textData) : null; // JSON parse etmeye çalış
+    } catch (error) {
+      console.warn("Yanıt JSON formatında değil, düz metin:", textData);
+      responseData = textData; // JSON değilse, direkt düz metin olarak ata
     }
 
-    // Cookie'yi işleyin
-    const responseCookie = response.headers.get("set-cookie");
-    const cookiesArray = responseCookie.split(",");
-    const a = cookiesArray.flatMap((x) => x.split(";"));
-    const cookiesObject = {};
-    a.forEach((cookie) => {
-      const [key, value] = cookie.trim().split("=");
-      cookiesObject[key] = value;
-    });
+    console.log("Sunucudan Gelen Yanıt:", responseData);
 
-    console.debug("cookiesObject:", cookiesObject);
+    // Yanıt başarılı mı kontrol et
+    if (response.ok) {
+      return { success: "Kayıt başarılı!" };
+    }
 
-    // .AspNetCore.Identity.Application cookie'yi ayarlayın
-    cookies().set(".AspNetCore.Identity.Application", cookiesObject[".AspNetCore.Identity.Application"]);
+    // API hata kodlarını işle
+    if (response.status === 400 && Array.isArray(responseData)) {
+      const errorMessages = responseData.map((error) => error.description).join("\n");
+      return { error: errorMessages };
+    }
 
-    return { success: "Kayıt başarılı!" };
+    return { error: "Kayıt işlemi sırasında bir hata oluştu." };
   } catch (error) {
-    console.error(error);
+    console.error("Hata:", error);
     return { error: "Bir hata oluştu" };
   }
 }
+
+
+
 
 export async function deleteAllCommentsOfOpinion(opinionId) {
   const { response } = await AdvancedFetch(`https://feedback.nazlisunay.com.tr/api/Opinions/${opinionId}`);
