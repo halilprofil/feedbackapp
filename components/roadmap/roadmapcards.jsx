@@ -6,6 +6,7 @@ import Link from "next/link";
 import styles from "./page.module.css";
 import { AdvancedFetch } from "@/utils/advancedfetch";
 import MiniRoadMap from "./MiniRoadMap";
+import { getFeedback } from "@/utils/fetch";
 
 export default async function RoadMapsCards({ statusPlanned, statusProgress, statusLive }) {
   const user = await AdvancedFetch("https://feedback.nazlisunay.com.tr/api/User/me");
@@ -19,6 +20,20 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
   if (!statusPlanned || !statusProgress || !statusLive) {
     return <p>Data is loading or unavailable.</p>;
   }
+
+   const { response } = await getFeedback();
+   const data = response || [];
+  
+    const commentsData = await Promise.all(
+      data.map(async (x) => {
+        const { response: opinionDetail } = await AdvancedFetch(
+          `https://feedback.nazlisunay.com.tr/api/Opinions/${x.id}`
+        );
+        return { id: x.id, commentCount: opinionDetail?.comments?.length || 0 };
+      })
+    );
+  
+    const commentsMap = new Map(commentsData.map((item) => [item.id, item.commentCount]));
 
   return (
     <>
@@ -45,7 +60,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
                   <Likes voteCount={x.voteCount} />
                   <div className={styles.commentBox}>
                     <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
-                    <p className={styles.commentCount}>{x.comment || 0}</p>
+                    <p className={styles.commentCount}>{commentsMap.get(x.id)  || 0}</p>
                   </div>
                 </div>
               </div>
@@ -73,7 +88,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
                   <Likes voteCount={x.voteCount} />
                   <div className={styles.commentBox}>
                     <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
-                    <p className={styles.commentCount}>{x.comment || 0}</p>
+                    <p className={styles.commentCount}>{commentsMap.get(x.id)  || 0}</p>
                   </div>
                 </div>
               </div>
@@ -101,7 +116,7 @@ export default async function RoadMapsCards({ statusPlanned, statusProgress, sta
                   <Likes voteCount={x.voteCount} />
                   <div className={styles.commentBox}>
                     <Image width={18} height={18} src="/assets/comment-icon.svg" alt="commentIcon" />
-                    <p className={styles.commentCount}>{x.comment || 0}</p>
+                    <p className={styles.commentCount}>{commentsMap.get(x.id)  || 0}</p>
                   </div>
                 </div>
               </div>

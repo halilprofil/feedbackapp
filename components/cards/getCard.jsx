@@ -20,6 +20,7 @@ export default async function Cards() {
       return { id: x.id, commentCount: opinionDetail?.comments?.length || 0 };
     })
   );
+  console.log(commentsData);
 
 
   const commentsMap = new Map(commentsData.map((item) => [item.id, item.commentCount]));
