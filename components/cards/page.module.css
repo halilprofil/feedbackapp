@@ -103,7 +103,7 @@
 
 
 
-@media(width < 769px){
+@media(width < 1030px){
   .cardsContainer{
     max-width: 689px !important;
   }

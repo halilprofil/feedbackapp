@@ -86,7 +86,7 @@
   align-self: center;
 }
 
-@media(width < 391px ){
+@media(width < 436px ){
  .modal{
   min-width: 300px;
  }

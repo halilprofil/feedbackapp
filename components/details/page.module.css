@@ -302,7 +302,7 @@
   color: red !important;
 }
 
-@media(width < 769px){
+@media(width < 1030px){
   .detailPage{
     width: 100%;
     padding-left: 40px;
@@ -328,7 +328,7 @@
 
 }
 
-@media( width < 391px){
+@media( width < 436px){
  .addCommentFooter{
   flex-direction: column;
   gap: 25px;
