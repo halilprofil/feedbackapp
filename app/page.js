@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 import styles from "./page.module.css";
 import Header from "@/components/header/header";
-import Cards from "@/components/cards/GetCard";
+import Cards from "@/components/cards/getCards";
 import Sidebar from "@/components/sidebar/Sidebar";
 
 import { AdvancedFetch } from "@/utils/advancedfetch";
